@@ -1,0 +1,61 @@
+package br.app.alfabetizei.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoUsuarioDto;
+import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeContarSilabasResponderDto;
+import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeEscolhaResponderDto;
+import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeLetrasPontilhadasResponderDto;
+import br.app.alfabetizei.service.atividadeFilho.AtividadeFilhoService;
+
+@RestController
+@RequestMapping("/atividadeFilho")
+public class AtividadeFilhoController {
+
+	@Autowired
+	private AtividadeFilhoService service;
+	
+	@GetMapping("/all")
+	public ResponseEntity<List<AtividadeFilhoUsuarioDto>> buscarTodos(){
+		return ResponseEntity.ok(service.buscarAtividadesFilho());
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<AtividadeFilhoUsuarioDto> buscarPorId(@PathVariable Long id){
+		return ResponseEntity.ok(service.buscarAtividade(id));
+	}
+	
+	@PostMapping("/responder/letrasPontilhadas")
+	public ResponseEntity<Void> responderLetrasPontilhadas(@RequestBody AtividadeLetrasPontilhadasResponderDto dados){
+		service.responderItemLetrasPontilhadas(dados);
+		return ResponseEntity.ok().build();
+	}
+	
+	@PostMapping("/responder/escolha")
+	public ResponseEntity<Void> responderEscolha(@RequestBody AtividadeEscolhaResponderDto dados){
+		service.responderItemEscolha(dados);
+		return ResponseEntity.ok().build();
+	}
+	
+	@PostMapping("/responder/contarSilabas")
+	public ResponseEntity<Void> responderContarSilabas(@RequestBody AtividadeContarSilabasResponderDto dados){
+		service.responderItemContarSilabas(dados);
+		return ResponseEntity.ok().build();
+	}
+	
+	@PutMapping("/finalizar/{id}")
+	public ResponseEntity<Void> finalizarAtividade(@PathVariable Long id){
+		service.finalizarAtividade(id);
+		return ResponseEntity.ok().build();
+	}
+}

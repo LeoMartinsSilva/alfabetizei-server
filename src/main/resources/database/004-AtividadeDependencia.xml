@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="1-CriaSequenceAtividadeFilhoDependencia" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_dependencia</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_dependencia INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-CriaTabelaAtividadeFilhoDependencia" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_dependencia</comment>
+		<sql>
+		    create table atividade_filho_dependencia (
+				id_atividade_filho_dependencia bigint default NEXTVAL('seq_atividade_filho_dependencia'::regclass) not null,
+				id_atividade_filho bigint not null,
+				id_atividade_filho_predecessora bigint,
+				id_atividade_pai_predecessora bigint,
+				CONSTRAINT pk_atividade_filho_dependencia PRIMARY KEY(id_atividade_filho_dependencia),
+				CONSTRAINT fk_ativ_fil_dep_atividade_filho FOREIGN KEY (id_atividade_filho) REFERENCES atividade_filho(id_atividade_filho) on delete cascade,
+				CONSTRAINT fk_ativ_fil_dep_atividade_filho_predecessora FOREIGN KEY (id_atividade_filho_predecessora) REFERENCES atividade_filho(id_atividade_filho) on delete cascade,
+				CONSTRAINT fk_ativ_fil_dep_atividade_pai_predecessora FOREIGN KEY (id_atividade_pai_predecessora) REFERENCES atividade_pai(id_atividade_pai) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-CriaSequenceAtividadePaiDependencia" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_pai_dependencia</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_pai_dependencia INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-CriaTabelaAtividadePaiDependencia" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_pai_dependencia</comment>
+		<sql>
+		    create table atividade_pai_dependencia (
+				id_atividade_pai_dependencia bigint default NEXTVAL('seq_atividade_pai_dependencia'::regclass) not null,
+				id_atividade_pai bigint not null,
+				id_atividade_filho_predecessora bigint,
+				id_atividade_pai_predecessora bigint,
+				CONSTRAINT pk_atividade_pai_dependencia PRIMARY KEY(id_atividade_pai_dependencia),
+				CONSTRAINT fk_ativ_fil_dep_atividade_pai FOREIGN KEY (id_atividade_pai) REFERENCES atividade_pai(id_atividade_pai) on delete cascade,
+				CONSTRAINT fk_ativ_fil_dep_atividade_filho_predecessora FOREIGN KEY (id_atividade_filho_predecessora) REFERENCES atividade_filho(id_atividade_filho) on delete cascade,
+				CONSTRAINT fk_ativ_fil_dep_atividade_pai_predecessora FOREIGN KEY (id_atividade_pai_predecessora) REFERENCES atividade_pai(id_atividade_pai) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

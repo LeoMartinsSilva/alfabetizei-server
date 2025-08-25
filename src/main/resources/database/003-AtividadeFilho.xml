@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="1-CriaSequenceAtividadeFilho" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-CriaTabelaAtividadeFilho" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho</comment>
+		<sql>
+		    create table atividade_filho (
+				id_atividade_filho bigint default NEXTVAL('seq_atividade_filho'::regclass) not null,
+				ds_titulo VARCHAR(100) not null,
+				ds_subtitulo VARCHAR(100) not null,
+				fl_tipo VARCHAR(2) not null,
+				CONSTRAINT pk_atividade_filho PRIMARY KEY(id_atividade_filho)
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-CriaSequenceAtividadeFilhoLetrasPontilhadas" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_letras_pontilhadas</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_letras_pontilhadas INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-CriaTabelaAtividadeFilhoLetrasPontilhadas" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_letras_pontilhadas</comment>
+		<sql>
+		    create table atividade_filho_letras_pontilhadas (
+				id_atividade_filho_letras_pontilhadas bigint default NEXTVAL('seq_atividade_filho_letras_pontilhadas'::regclass) not null,
+				id_atividade_filho bigint not null,
+				sq_interno_atividade integer not null,
+				ds_letras VARCHAR(50) not null,
+				CONSTRAINT pk_atividade_filho_letras_pontilhadas PRIMARY KEY(id_atividade_filho_letras_pontilhadas),
+				CONSTRAINT fl_ativ_fil_let_pon_atividade_filho FOREIGN KEY (id_atividade_filho) REFERENCES atividade_filho(id_atividade_filho) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-CriaSequenceAtividadeFilhoContarSilabas" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_contar_silabas</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_contar_silabas INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-CriaTabelaAtividadeFilhoContarSilabas" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_contar_silabas</comment>
+		<sql>
+		    create table atividade_filho_contar_silabas (
+				id_atividade_filho_contar_silabas bigint default NEXTVAL('seq_atividade_filho_contar_silabas'::regclass) not null,
+				id_atividade_filho bigint not null,
+				sq_interno_atividade integer not null,
+				ds_palavra VARCHAR(50) not null,
+				nr_silabas integer not null,
+				CONSTRAINT pk_atividade_filho_contar_silabas PRIMARY KEY(id_atividade_filho_contar_silabas),
+				CONSTRAINT fl_ativ_fil_cont_sil_atividade_filho FOREIGN KEY (id_atividade_filho) REFERENCES atividade_filho(id_atividade_filho) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-CriaSequenceAtividadeFilhoEscolha" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_escolha</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_escolha INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="8-CriaTabelaAtividadeFilhoEscolha" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_escolha</comment>
+		<sql>
+		    create table atividade_filho_escolha (
+				id_atividade_filho_escolha bigint default NEXTVAL('seq_atividade_filho_escolha'::regclass) not null,
+				id_atividade_filho bigint not null,
+				sq_interno_atividade integer not null,
+				CONSTRAINT pk_atividade_filho_escolha PRIMARY KEY(id_atividade_filho_escolha),
+				CONSTRAINT fl_ativ_fil_esc_atividade_filho FOREIGN KEY (id_atividade_filho) REFERENCES atividade_filho(id_atividade_filho) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="9-CriaSequenceAtividadeFilhoEscolhaOpcao" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_escolha_opcao</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_escolha_opcao INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="10-CriaTabelaAtividadeFilhoEscolhaOpcao" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_escolha_opcao</comment>
+		<sql>
+		    create table atividade_filho_escolha_opcao (
+				id_atividade_filho_escolha_opcao bigint default NEXTVAL('seq_atividade_filho_escolha_opcao'::regclass) not null,
+				id_atividade_filho_escolha bigint not null,
+				sq_opcao integer not null,
+				ds_opcao VARCHAR(50) NOT NULL,
+				fl_opcao_correta boolean not null,
+				CONSTRAINT pk_atividade_filho_escolha_opcao PRIMARY KEY(id_atividade_filho_escolha_opcao),
+				CONSTRAINT fl_ativ_fil_esc_opc_atividade_filho FOREIGN KEY (id_atividade_filho_escolha) REFERENCES atividade_filho_escolha(id_atividade_filho_escolha) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="11-CriaSequenceAtividadePaiUsuario" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_usuario</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_usuario INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="12-CriaTabelaAtividadePaiUsuario" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_usuario</comment>
+		<sql>
+		    create table atividade_filho_usuario (
+				id_atividade_filho_usuario bigint default NEXTVAL('seq_atividade_filho_usuario'::regclass) not null,
+				id_atividade_filho bigint not null,
+				id_usuario bigint not null,
+				dh_inicio timestamp,
+				dh_fim timestamp,
+				fl_status VARCHAR(2) not null,
+				vl_nota integer,
+				CONSTRAINT pk_atividade_filho_usuario PRIMARY KEY(id_atividade_filho_usuario),
+				CONSTRAINT fl_ativ_fil_usu_atividade_filho FOREIGN KEY (id_atividade_filho) REFERENCES atividade_filho(id_atividade_filho) on delete cascade,
+				CONSTRAINT fl_ativ_fil_usu_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="13-CriaSequenceAtividadeFilhoLetrasPontilhadasUsuario" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_letras_pontilhadas_usuario</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_letras_pontilhadas_usuario INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="14-CriaTabelaAtividadeFilhoLetrasPontilhadasUsuario" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_letras_pontilhadas_usuario</comment>
+		<sql>
+		    create table atividade_filho_letras_pontilhadas_usuario (
+				id_atividade_filho_letras_pontilhadas_usuario bigint default NEXTVAL('seq_atividade_filho_letras_pontilhadas_usuario'::regclass) not null,
+				id_atividade_filho_usuario bigint not null,
+				sq_interno_atividade integer not null,
+				ds_letras VARCHAR(50) not null,
+				ds_desenho_base64 text,
+				CONSTRAINT pk_atividade_filho_letras_pontilhadas_usuario PRIMARY KEY(id_atividade_filho_letras_pontilhadas_usuario),
+				CONSTRAINT fl_ativ_fil_let_pon_usu_atividade_filho_usuario FOREIGN KEY (id_atividade_filho_usuario) REFERENCES atividade_filho_usuario(id_atividade_filho_usuario) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="15-CriaSequenceAtividadeFilhoContarSilabasUsuario" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_contar_silabas_usuario</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_contar_silabas_usuario INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="16-CriaTabelaAtividadeFilhoContarSilabasUsuario" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_contar_silabas_usuario</comment>
+		<sql>
+		    create table atividade_filho_contar_silabas_usuario (
+				id_atividade_filho_contar_silabas_usuario bigint default NEXTVAL('seq_atividade_filho_contar_silabas_usuario'::regclass) not null,
+				id_atividade_filho_usuario bigint not null,
+				sq_interno_atividade integer not null,
+				ds_palavra VARCHAR(50) not null,
+				nr_silabas integer not null,
+				nr_silabas_selecionada integer,
+				fl_acertou boolean,
+				fl_status varchar(2) not null,
+				CONSTRAINT pk_atividade_filho_contar_silabas_usuario PRIMARY KEY(id_atividade_filho_contar_silabas_usuario),
+				CONSTRAINT fl_ativ_fil_cont_sil_atividade_filho_usuario FOREIGN KEY (id_atividade_filho_usuario) REFERENCES atividade_filho_usuario(id_atividade_filho_usuario) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="17-CriaSequenceAtividadeFilhoEscolhaUsuario" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_escolha_usuario</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_escolha_usuario INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="18-CriaTabelaAtividadeFilhoEscolhaUsuario" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_escolha_usuario</comment>
+		<sql>
+		    create table atividade_filho_escolha_usuario (
+				id_atividade_filho_escolha_usuario bigint default NEXTVAL('seq_atividade_filho_escolha_usuario'::regclass) not null,
+				id_atividade_filho_usuario bigint not null,
+				sq_interno_atividade integer not null,
+				fl_status varchar(2) not null,
+				fl_acertou boolean,
+				CONSTRAINT pk_atividade_filho_escolha_usuario PRIMARY KEY(id_atividade_filho_escolha_usuario),
+				CONSTRAINT fl_ativ_fil_esc_usu_atividade_filho_usuario FOREIGN KEY (id_atividade_filho_usuario) REFERENCES atividade_filho_usuario(id_atividade_filho_usuario) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="19-CriaSequenceAtividadeFilhoEscolhaOpcaoUsuario" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_filho_escolha_opcao_usuario</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_filho_escolha_opcao_usuario INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="20-CriaTabelaAtividadeFilhoEscolhaOpcaoUsuario" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_filho_escolha_opcao_usuario</comment>
+		<sql>
+		    create table atividade_filho_escolha_opcao_usuario (
+				id_atividade_filho_escolha_opcao_usuario bigint default NEXTVAL('seq_atividade_filho_escolha_opcao_usuario'::regclass) not null,
+				id_atividade_filho_escolha_usuario bigint not null,
+				sq_opcao integer not null,
+				ds_opcao VARCHAR(50) NOT NULL,
+				fl_opcao_correta boolean not null,
+				fl_opcao_escolhida boolean, 
+				CONSTRAINT pk_atividade_filho_escolha_opcao_usuario PRIMARY KEY(id_atividade_filho_escolha_opcao_usuario),
+				CONSTRAINT fl_ativ_fil_esc_opc_usu_atividade_filho_escolha_usuario FOREIGN KEY (id_atividade_filho_escolha_usuario) REFERENCES atividade_filho_escolha_usuario(id_atividade_filho_escolha_usuario) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

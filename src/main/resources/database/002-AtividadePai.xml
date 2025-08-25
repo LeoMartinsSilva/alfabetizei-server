@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="1-CriaSequenceAtividadePai" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_pai</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_pai INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-CriaTabelaAtividadePai" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_pai</comment>
+		<sql>
+		    create table atividade_pai (
+				id_atividade_pai bigint default NEXTVAL('seq_atividade_pai'::regclass) not null,
+				ds_titulo VARCHAR(100) not null,
+				ds_subtitulo VARCHAR(100) not null,
+				fl_tipo VARCHAR(2) not null,
+				CONSTRAINT pk_atividade_pai PRIMARY KEY(id_atividade_pai)
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-CriaSequenceAtividadePaiTexto" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_pai_texto</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_pai_texto INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-CriaTabelaAtividadePaiTexto" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_pai_texto</comment>
+		<sql>
+		    create table atividade_pai_texto (
+				id_atividade_pai_texto bigint default NEXTVAL('seq_atividade_pai_texto'::regclass) not null,
+				id_atividade_pai bigint not null,
+				sq_interno_atividade integer not null,
+				ds_titulo VARCHAR(100) not null,
+				ds_texto text not null,
+				ds_imagem_base64 text,
+				CONSTRAINT pk_atividade_pai_texto PRIMARY KEY(id_atividade_pai_texto),
+				CONSTRAINT fl_ativ_pai_tex_atividade_pai FOREIGN KEY (id_atividade_pai) REFERENCES atividade_pai(id_atividade_pai) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-CriaSequenceAtividadePaiSugestaoLeitura" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_pai_sugestao_leitura</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_pai_sugestao_leitura INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-CriaTabelaAtividadePaiSugestaoLeitura" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_pai_sugestao_leitura</comment>
+		<sql>
+		    create table atividade_pai_sugestao_leitura (
+				id_atividade_pai_sugestao_leitura bigint default NEXTVAL('seq_atividade_pai_sugestao_leitura'::regclass) not null,
+				id_atividade_pai bigint not null,
+				sq_interno_atividade integer not null,
+				ds_titulo VARCHAR(100) not null,
+				ds_descricao text not null,
+				ds_imagem_base64 text,
+				CONSTRAINT pk_atividade_pai_sugestao_leitura PRIMARY KEY(id_atividade_pai_sugestao_leitura),
+				CONSTRAINT fl_ativ_pai_sug_lei_atividade_pai FOREIGN KEY (id_atividade_pai) REFERENCES atividade_pai(id_atividade_pai) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-CriaSequenceAtividadePaiSugestaoVideo" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_pai_sugestao_video</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_pai_sugestao_video INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="8-CriaTabelaAtividadePaiSugestaoVideo" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_pai_sugestao_video</comment>
+		<sql>
+		    create table atividade_pai_sugestao_video (
+				id_atividade_pai_sugestao_video bigint default NEXTVAL('seq_atividade_pai_sugestao_video'::regclass) not null,
+				id_atividade_pai bigint not null,
+				sq_interno_atividade integer not null,
+				ds_titulo VARCHAR(100) not null,
+				ds_link_youtube text not null,
+				CONSTRAINT pk_atividade_pai_sugestao_video PRIMARY KEY(id_atividade_pai_sugestao_video),
+				CONSTRAINT fl_ativ_pai_sug_vid_atividade_pai FOREIGN KEY (id_atividade_pai) REFERENCES atividade_pai(id_atividade_pai) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="9-CriaSequenceAtividadePaiUsuario" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela atividade_pai_usuario</comment>
+		<sql>
+		    CREATE SEQUENCE seq_atividade_pai_usuario INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="10-CriaTabelaAtividadePaiUsuario" author="Leonardo Martins">
+		<comment>Criando a tabela atividade_pai_usuario</comment>
+		<sql>
+		    create table atividade_pai_usuario (
+				id_atividade_pai_usuario bigint default NEXTVAL('seq_atividade_pai_usuario'::regclass) not null,
+				id_atividade_pai bigint not null,
+				id_usuario bigint not null,
+				dh_inicio timestamp,
+				dh_fim timestamp,
+				fl_status VARCHAR(2) not null,
+				CONSTRAINT pk_atividade_pai_usuario PRIMARY KEY(id_atividade_pai_usuario),
+				CONSTRAINT fl_ativ_pai_usu_atividade_pai FOREIGN KEY (id_atividade_pai) REFERENCES atividade_pai(id_atividade_pai) on delete cascade,
+				CONSTRAINT fl_ativ_pai_usu_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario) on delete cascade
+			);
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>
