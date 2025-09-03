@@ -26,7 +26,8 @@ public class AtividadeFilhoEscolhaOpcaoUsuarioMapper extends AbstractMapper<Ativ
                 .sequencial(entity.getSequencial())
                 .descricao(entity.getDescricao())
                 .opcaoCorreta(entity.getOpcaoCorreta())
-                .opcaoEscolhida(entity.getOpcaoEscolhida());
+                .opcaoEscolhida(entity.getOpcaoEscolhida())
+                .temImagem(entity.getTemImagem());
 
         return builder.build();
     }
@@ -40,7 +41,8 @@ public class AtividadeFilhoEscolhaOpcaoUsuarioMapper extends AbstractMapper<Ativ
                 .sequencial(dto.getSequencial())
                 .descricao(dto.getDescricao())
                 .opcaoCorreta(dto.getOpcaoCorreta())
-                .opcaoEscolhida(dto.getOpcaoEscolhida());
+                .opcaoEscolhida(dto.getOpcaoEscolhida())
+                .temImagem(dto.getTemImagem());
     	
          return builder.build();
     }

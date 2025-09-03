@@ -15,4 +15,5 @@ public class AtividadeFilhoEscolhaOpcaoDto {
 	private Integer sequencial;
 	private String descricao;
 	private Boolean opcaoCorreta;
+	private Boolean temImagem;
 }

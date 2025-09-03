@@ -7,7 +7,7 @@ import java.util.List;
 public enum TipoAtividadePaiEnum {
 	
 	ATIVIDADE_PRATICA("AP", "Atividade prática"), 
-	ATIVIDADE_TEORICAO("AT", "Atividade teórica"),
+	ATIVIDADE_TEORICA("AT", "Atividade teórica"),
 	LEITURA_COMPARTILADA("LC", "Leitura compartilhada");
 
 	private final String codigo;

@@ -39,6 +39,7 @@ public class AtividadeFilhoEscolhaOpcaoService {
 				itemUsuario.setSequencial(item.getSequencial());
 				itemUsuario.setOpcaoCorreta(item.getOpcaoCorreta());
 				itemUsuario.setDescricao(item.getDescricao());
+				itemUsuario.setTemImagem(item.getTemImagem());
 				itemUsuario = atividadeFilhoEscolhaOpcaoUsuarioRepository.save(itemUsuario);
 				itensUsuario.add(atividadeFilhoEscolhaOpcaoUsuarioMapper.toDto(itemUsuario));
 			}

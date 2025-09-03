@@ -42,6 +42,8 @@ public class AtividadeFilhoLetrasPontilhadasService {
 				itemUsuario.setAtividadeFilhoUsuario(atividadeFilhoUsuario);
 				itemUsuario.setLetras(item.getLetras());
 				itemUsuario.setSequencial(item.getSequencial());
+				itemUsuario.setUsaNomes(item.isUsaNomes());
+				itemUsuario.setVariavel(item.getVariavel());
 				itemUsuario = atividadeFilhoLetrasPontilhadasUsuarioRepository.save(itemUsuario);
 				itensUsuario.add(atividadeFilhoLetrasPontilhadasUsuarioMapper.toDto(itemUsuario));
 			}

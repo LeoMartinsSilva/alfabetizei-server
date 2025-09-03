@@ -25,8 +25,7 @@ public class AtividadePaiSugestaoLeituraMapper extends AbstractMapper<AtividadeP
                 .atividadePai(entity.getAtividadePai()!=null?atividadePaiMapper.toDto(entity.getAtividadePai()):null)
                 .sequencial(entity.getSequencial())
                 .titulo(entity.getTitulo())
-                .descricao(entity.getDescricao())
-                .imagemBase64(entity.getImagemBase64());
+                .descricao(entity.getDescricao());
 
         return builder.build();
     }
@@ -39,8 +38,7 @@ public class AtividadePaiSugestaoLeituraMapper extends AbstractMapper<AtividadeP
                 .atividadePai(dto.getAtividadePai()!=null?atividadePaiMapper.toEntity(dto.getAtividadePai()):null)
                 .sequencial(dto.getSequencial())
                 .titulo(dto.getTitulo())
-                .descricao(dto.getDescricao())
-                .imagemBase64(dto.getImagemBase64());
+                .descricao(dto.getDescricao());
     	
          return builder.build();
     }

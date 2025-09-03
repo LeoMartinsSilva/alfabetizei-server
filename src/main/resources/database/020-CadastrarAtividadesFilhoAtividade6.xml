@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeFilhoAtividade6" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (6, 'Atividade 6', 'Contar Silabas', 'S');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-InserindoAtividadeFilhoAtividade6ContarSilaba1" author="Leonardo Martins">
+		<comment>Inserindo atividade filho contar silaba</comment>
+		<sql>
+			insert into atividade_filho_contar_silabas (id_atividade_filho, sq_interno_atividade, ds_palavra, nr_silabas)
+			values (6, 1, 'Rato', 2);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-InserindoAtividadeFilhoAtividade6ContarSilaba2" author="Leonardo Martins">
+		<comment>Inserindo atividade filho contar silaba</comment>
+		<sql>
+			insert into atividade_filho_contar_silabas (id_atividade_filho, sq_interno_atividade, ds_palavra, nr_silabas)
+			values (6, 2, 'Arvore', 3);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-InserindoAtividadeFilhoAtividade6ContarSilaba3" author="Leonardo Martins">
+		<comment>Inserindo atividade filho contar silaba</comment>
+		<sql>
+			insert into atividade_filho_contar_silabas (id_atividade_filho, sq_interno_atividade, ds_palavra, nr_silabas)
+			values (6, 3, 'Casa', 2);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-InserindoAtividadeFilhoAtividade6ContarSilaba5" author="Leonardo Martins">
+		<comment>Inserindo atividade filho contar silaba</comment>
+		<sql>
+			insert into atividade_filho_contar_silabas (id_atividade_filho, sq_interno_atividade, ds_palavra, nr_silabas)
+			values (6, 4, 'Foguete', 3);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-InserindoAtividadeFilhoAtividade6ContarSilaba6" author="Leonardo Martins">
+		<comment>Inserindo atividade filho contar silaba</comment>
+		<sql>
+			insert into atividade_filho_contar_silabas (id_atividade_filho, sq_interno_atividade, ds_palavra, nr_silabas)
+			values (6, 5, 'Borboleta', 4);
+		</sql>
+	</changeSet>
+
+	
+</databaseChangeLog>

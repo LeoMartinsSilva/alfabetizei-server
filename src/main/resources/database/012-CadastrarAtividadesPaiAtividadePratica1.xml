@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadePratica1" author="Leonardo Martins">
+		<comment>Inserindo atividade prática 1</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (8, 'Atividade prática 1', 'Escrita das vogais', 'AP');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-AtividadePratica1Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na atividade prática</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto, fl_tem_imagem)
+			values (8, 1, '', 
+				'Para realizar essa atividade você deve pontilhar as vogais para que seu filho contorne. Veja no exemplo abaixo.',
+				true
+			)
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

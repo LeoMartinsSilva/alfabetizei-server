@@ -16,4 +16,5 @@ public class AtividadeFilhoEscolhaOpcaoUsuarioDto {
 	private String descricao;
 	private Boolean opcaoCorreta;
 	private Boolean opcaoEscolhida;
+	private Boolean temImagem;
 }

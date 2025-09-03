@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="1-InserindoDependenciasAtividadeFilho1a5" author="Leonardo Martins">
+		<comment>inserindo dependencias atividade filho 1 a 5</comment>
+		<sql>
+		    insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (1, 5, null);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (2, 5, null);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (3, 6, null);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (3, null, 1);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (4, 6, null);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (4, null, 2);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (5, null, 3);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (5, null, 4);
+		</sql>
+	</changeSet>
+	
+	 <changeSet id="2-InserindoDependenciasAtividadeFilho6a10" author="Leonardo Martins">
+		<comment>inserindo dependencias atividade filho 6 a 10</comment>
+		<sql>
+		    insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (6, 7, null);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (6, null, 5);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (7, null, 5);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (8, null, 6);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (8, null, 7);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (9, 10, null);
+			
+			insert into atividade_filho_dependencia (id_atividade_filho, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (10, null, 8);
+		</sql>
+	</changeSet>
+	
+	
+	
+</databaseChangeLog>

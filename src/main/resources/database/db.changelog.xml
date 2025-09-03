@@ -9,6 +9,27 @@
 	<include file="database/002-AtividadePai.xml"/>
 	<include file="database/003-AtividadeFilho.xml"/>
 	<include file="database/004-AtividadeDependencia.xml"/>
-	
+	<include file="database/005-CadastrarAtividadesPaiSugestaoLeitura1.xml"/>
+	<include file="database/006-CadastrarAtividadesPaiSugestaoLeitura2.xml"/>
+	<include file="database/007-CadastrarAtividadesPaiSugestaoLeitura3.xml"/>
+	<include file="database/008-CadastrarAtividadesPaiAtividadeTeorica1.xml"/>
+	<include file="database/009-CadastrarAtividadesPaiAtividadeTeorica2.xml"/>
+	<include file="database/010-CadastrarAtividadesPaiAtividadeTeorica3.xml"/>
+	<include file="database/011-CadastrarAtividadesPaiAtividadeTeorica4.xml"/>
+	<include file="database/012-CadastrarAtividadesPaiAtividadePratica1.xml"/>
+	<include file="database/013-CadastrarAtividadesPaiAtividadePratica2.xml"/>
+	<include file="database/014-CadastrarAtividadesPaiAtividadePratica3.xml"/>
+	<include file="database/015-CadastrarAtividadesFilhoAtividade1.xml" />
+	<include file="database/016-CadastrarAtividadesFilhoAtividade2.xml" />
+	<include file="database/017-CadastrarAtividadesFilhoAtividade3.xml" />
+	<include file="database/018-CadastrarAtividadesFilhoAtividade4.xml" />
+	<include file="database/019-CadastrarAtividadesFilhoAtividade5.xml" />
+	<include file="database/020-CadastrarAtividadesFilhoAtividade6.xml" />
+	<include file="database/021-CadastrarAtividadesFilhoAtividade7.xml" />
+	<include file="database/022-CadastrarAtividadesFilhoAtividade8.xml" />
+	<include file="database/023-CadastrarAtividadesFilhoAtividade9.xml" />
+	<include file="database/024-CadastrarAtividadesFilhoAtividade10.xml" />
+	<include file="database/025-AtividadePaiDepencia.xml" />
+	<include file="database/026-AtividadeFilhoDepencia.xml" />
 	
 </databaseChangeLog>

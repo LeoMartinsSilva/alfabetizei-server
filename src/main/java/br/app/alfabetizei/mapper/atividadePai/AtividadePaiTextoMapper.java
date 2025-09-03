@@ -26,7 +26,7 @@ public class AtividadePaiTextoMapper extends AbstractMapper<AtividadePaiTextoDto
                 .sequencial(entity.getSequencial())
                 .titulo(entity.getTitulo())
                 .texto(entity.getTexto())
-                .imagemBase64(entity.getImagemBase64());
+                .temImagem(entity.getTemImagem());
 
         return builder.build();
     }
@@ -40,7 +40,7 @@ public class AtividadePaiTextoMapper extends AbstractMapper<AtividadePaiTextoDto
                 .sequencial(dto.getSequencial())
                 .titulo(dto.getTitulo())
                 .texto(dto.getTexto())
-                .imagemBase64(dto.getImagemBase64());
+                .temImagem(dto.getTemImagem());
     	
          return builder.build();
     }

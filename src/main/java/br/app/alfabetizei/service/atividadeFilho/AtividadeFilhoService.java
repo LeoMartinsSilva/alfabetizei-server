@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.app.alfabetizei.dto.ImageDto;
 import br.app.alfabetizei.dto.UsuarioDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoUsuarioDto;
@@ -22,6 +23,7 @@ import br.app.alfabetizei.model.atividadeFilho.AtividadeFilhoUsuario;
 import br.app.alfabetizei.repository.atividadeFilho.AtividadeFilhoRepository;
 import br.app.alfabetizei.repository.atividadeFilho.AtividadeFilhoUsuarioRepository;
 import br.app.alfabetizei.service.UsuarioLogadoService;
+import br.app.alfabetizei.util.ImageUtil;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -147,5 +149,14 @@ public class AtividadeFilhoService {
 			return escolhaService.buscarNotaPorAtividade(atividadeUsuario.getId());
 		}
 		return 0;
+	}
+
+
+
+	public ImageDto buscarImagemOpcao(Long idAtividade, Long sequencial, Long sequencialOpcao) {
+		return ImageUtil.getImage("images/atividade_filho/" + idAtividade + "/escolha_opcao/" + sequencial + "/" + sequencialOpcao);
+	}
+	public ImageDto buscarImagemContarSilabas(Long idAtividade, Long sequencial) {
+		return ImageUtil.getImage("images/atividade_filho/" + idAtividade + "/contar_silabas/" + sequencial);
 	}
 }

@@ -44,4 +44,7 @@ public class AtividadeFilhoEscolhaOpcaoUsuario {
 	@Column(name = "fl_opcao_escolhida")
 	private Boolean opcaoEscolhida;
 	
+	@Column(name = "fl_tem_imagem")
+	private Boolean temImagem;
+	
 }

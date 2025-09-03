@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeTeorica3" author="Leonardo Martins">
+		<comment>Inserindo atividade teórica 3</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (6, 'Atividade teórica 3', 'Consoantes', 'AT');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-AtividadeTeorica3Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (6, 1, '', 
+				'Realize cada atividade separadamente, fazendo pausas entre elas para que seu filho não se canse ou fique sobrecarregado.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-AtividadeTeorica3Texto2" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (6, 2, '1. Apresentar as letras e seus nomes', 
+				'Mostre cada consoante isoladamente, diga o nome da letra e permita que a criança repita. Use um alfabeto visual grande e colorido para chamar a atenção, apontando e nomeando devagar.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-AtividadeTeorica3Texto3" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (6, 3, '2. Ensinar o som de cada letra', 
+				'Depois do nome, ensine o som que a letra faz. Por exemplo: a letra “M” se chama “eme”, mas o som dela é “mmm”. É importante que a criança perceba que o nome e o som não são a mesma coisa. Para isso você pode ir de letra em letra ensinando o som, dando foco no formato da boca que a criança deve fazer.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-AtividadeTeorica3Texto4" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (6, 4, '3. Relacionar a letra a objetos conhecidos', 
+				'Associe cada consoante a algo familiar: “B” de bola, “C” de casa, “M” de mamãe. Mostre imagens ou objetos reais para reforçar a ligação entre o som e o mundo ao redor.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-AtividadeTeorica3Texto5" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (6, 5, '4. Reforçar com repetição e brincadeiras', 
+				'Repita as letras e sons várias vezes ao longo dos dias, usando jogos simples como cartas com figuras, caça-letras em revistas ou músicas que mencionam o alfabeto. Assim, o aprendizado se torna natural e divertido.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-AtividadeTeorica3SugestaoVideo1" author="Leonardo Martins">
+		<comment>Inserindo Sugestão de video na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_link_youtube)
+			values (6, 6, 'Abecedário da xuxa', 'Xuxa', 'https://www.youtube.com/watch?v=ndpwLu_oyHs')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="8-AtividadeTeorica3SugestaoVideo2" author="Leonardo Martins">
+		<comment>Inserindo Sugestão de video na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_link_youtube)
+			values (6, 7, 'Alfabeto - Vogais e Consoantes', 'Prof Fabíola Dias', 'https://www.youtube.com/watch?v=XL09H-o7UEk')
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

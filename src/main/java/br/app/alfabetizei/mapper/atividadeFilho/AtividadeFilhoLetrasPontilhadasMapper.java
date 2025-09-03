@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoLetrasPontilhadasDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoLetrasPontilhadasDto.AtividadeFilhoLetrasPontilhadasDtoBuilder;
+import br.app.alfabetizei.enums.VariavelLetrasPontilhadasEnum;
 import br.app.alfabetizei.mapper.AbstractMapper;
 import br.app.alfabetizei.model.atividadeFilho.AtividadeFilhoLetrasPontilhadas;
 import br.app.alfabetizei.model.atividadeFilho.AtividadeFilhoLetrasPontilhadas.AtividadeFilhoLetrasPontilhadasBuilder;
@@ -24,7 +25,9 @@ public class AtividadeFilhoLetrasPontilhadasMapper extends AbstractMapper<Ativid
                 .id(entity.getId())
                 .atividadeFilho(entity.getAtividadeFilho()!=null? atividadeFilhoMapper.toDto(entity.getAtividadeFilho()) :null)
                 .sequencial(entity.getSequencial())
-                .letras(entity.getLetras());
+                .letras(entity.getLetras())
+                .usaNomes(entity.isUsaNomes())
+                .variavel(VariavelLetrasPontilhadasEnum.getEnum(entity.getVariavel()));
 
         return builder.build();
     }
@@ -36,7 +39,9 @@ public class AtividadeFilhoLetrasPontilhadasMapper extends AbstractMapper<Ativid
     			.id(dto.getId())
                 .atividadeFilho(dto.getAtividadeFilho()!=null? atividadeFilhoMapper.toEntity(dto.getAtividadeFilho()) :null)
                 .sequencial(dto.getSequencial())
-                .letras(dto.getLetras());
+                .letras(dto.getLetras())
+                .usaNomes(dto.isUsaNomes())
+                .variavel(dto.getVariavel()!=null ? dto.getVariavel().getCodigo(): null);
     	
          return builder.build();
     }

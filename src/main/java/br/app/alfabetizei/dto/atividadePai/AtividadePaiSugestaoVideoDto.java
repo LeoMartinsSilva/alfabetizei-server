@@ -14,5 +14,6 @@ public class AtividadePaiSugestaoVideoDto {
 	private AtividadePaiDto atividadePai;
 	private Integer sequencial;
 	private String titulo;
-	private String descricao;
+	private String autor;
+	private String link;
 }

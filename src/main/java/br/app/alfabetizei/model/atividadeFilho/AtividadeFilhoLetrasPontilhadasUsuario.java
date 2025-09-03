@@ -38,6 +38,12 @@ public class AtividadeFilhoLetrasPontilhadasUsuario {
 	@Column(name = "ds_letras")
 	private String letras;
 	
+	@Column(name = "fl_usa_nomes")
+	private boolean usaNomes;
+	
+	@Column(name = "fl_variavel")
+	private String variavel;
+	
 	@Column(name = "ds_desenho_base64")
 	private String desenhoBase64;
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoLetrasPontilhadasUsuarioDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoLetrasPontilhadasUsuarioDto.AtividadeFilhoLetrasPontilhadasUsuarioDtoBuilder;
+import br.app.alfabetizei.enums.VariavelLetrasPontilhadasEnum;
 import br.app.alfabetizei.mapper.AbstractMapper;
 import br.app.alfabetizei.model.atividadeFilho.AtividadeFilhoLetrasPontilhadasUsuario;
 import br.app.alfabetizei.model.atividadeFilho.AtividadeFilhoLetrasPontilhadasUsuario.AtividadeFilhoLetrasPontilhadasUsuarioBuilder;
@@ -25,6 +26,8 @@ public class AtividadeFilhoLetrasPontilhadasUsuarioMapper extends AbstractMapper
                 .atividadeFilhoUsuario(entity.getAtividadeFilhoUsuario()!=null? atividadeFilhoUsuarioMapper.toDto(entity.getAtividadeFilhoUsuario()) :null)
                 .sequencial(entity.getSequencial())
                 .letras(entity.getLetras())
+                .usaNomes(entity.isUsaNomes())
+                .variavel(VariavelLetrasPontilhadasEnum.getEnum(entity.getVariavel()))
                 .desenhoBase64(entity.getDesenhoBase64());
         return builder.build();
     }
@@ -37,6 +40,8 @@ public class AtividadeFilhoLetrasPontilhadasUsuarioMapper extends AbstractMapper
                 .atividadeFilhoUsuario(dto.getAtividadeFilhoUsuario()!=null? atividadeFilhoUsuarioMapper.toEntity(dto.getAtividadeFilhoUsuario()) :null)
                 .sequencial(dto.getSequencial())
                 .letras(dto.getLetras())
+                .usaNomes(dto.isUsaNomes())
+                .variavel(dto.getVariavel()!=null? dto.getVariavel().getCodigo() :null)
                 .desenhoBase64(dto.getDesenhoBase64());
         
     	

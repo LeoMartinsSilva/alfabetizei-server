@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeFilhoAtividade9" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (9, 'Atividade 9', 'Escrever nomes', 'LP');
+		</sql>
+	</changeSet>
+
+	<changeSet id="2-InserindoAtividadeFilhoAtividade9LetrasPontilhadas" author="Leonardo Martins">
+		<comment>Inserindo letra pontilhada</comment>
+		<sql>
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, fl_usa_nomes, fl_variavel)
+			values (9, 1, true, 'N');
+		
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, fl_usa_nomes, fl_variavel)
+			values (9, 2, true, 'NP');
+			
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, fl_usa_nomes, fl_variavel)
+			values (9, 3, true, 'NM');
+			
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

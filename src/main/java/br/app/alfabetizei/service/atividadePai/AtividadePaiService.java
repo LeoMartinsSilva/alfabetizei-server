@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.app.alfabetizei.dto.ImageDto;
 import br.app.alfabetizei.dto.UsuarioDto;
 import br.app.alfabetizei.dto.atividadePai.AtividadePaiDto;
 import br.app.alfabetizei.dto.atividadePai.AtividadePaiUsuarioDto;
@@ -16,6 +17,7 @@ import br.app.alfabetizei.model.atividadePai.AtividadePaiUsuario;
 import br.app.alfabetizei.repository.atividadePai.AtividadePaiRepository;
 import br.app.alfabetizei.repository.atividadePai.AtividadePaiUsuarioRepository;
 import br.app.alfabetizei.service.UsuarioLogadoService;
+import br.app.alfabetizei.util.ImageUtil;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -102,5 +104,9 @@ public class AtividadePaiService {
 		if(atividade != null) {
 			atividade.setStatus(StatusAtividadePaiEnum.FINALIZADA.getCodigo());
 		}
+	}
+
+	public ImageDto getImage(Long idAtividade, Integer sequencial) {
+		return ImageUtil.getImage("images/atividade_pai/" + idAtividade + "/" + sequencial);
 	}
 }

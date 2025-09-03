@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeFilhoAtividade5" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (5, 'Atividade 5', 'Escolher objetos corretos', 'ME');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-InserindoAtividadeFilhoAtividade5Escolha1" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (11, 5, 1);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (11, 1, 'Mesa', true, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (11, 2, 'Rato', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (11, 3, 'Panela', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (11, 4, 'Casa', false, true);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-InserindoAtividadeFilhoAtividade5Escolha2" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (12, 5, 2);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (12, 1, 'Pato', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (12, 2, 'Leite', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (12, 3, 'Anjo', true, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (12, 4, 'Gato', false, true);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-InserindoAtividadeFilhoAtividade5Escolha3" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (13, 5, 3);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (13, 1, 'Avião', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (13, 2, 'Bola', true, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (13, 3, 'Foca', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (13, 4, 'Mão', false, true);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-InserindoAtividadeFilhoAtividade5Escolha4" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (14, 5, 4);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (14, 1, 'Anjo', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (14, 2, 'Gato', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (14, 3, 'Pato', true, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (14, 4, 'Mesa', false, true);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-InserindoAtividadeFilhoAtividade5Escolha5" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (15, 5, 5);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (15, 1, 'Pé', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (15, 2, 'Olho', true, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (15, 3, 'Boca', false, true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (15, 4, 'Mão', false, true);
+			
+		</sql>
+	</changeSet>
+
+	
+</databaseChangeLog>

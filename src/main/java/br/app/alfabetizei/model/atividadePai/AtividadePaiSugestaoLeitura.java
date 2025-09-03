@@ -40,8 +40,5 @@ public class AtividadePaiSugestaoLeitura {
 
 	@Column(name = "ds_descricao")
 	private String descricao;
-
-	@Column(name = "ds_imagem_base64")
-	private String imagemBase64;
 	
 }

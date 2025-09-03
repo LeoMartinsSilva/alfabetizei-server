@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeTeorica2" author="Leonardo Martins">
+		<comment>Inserindo atividade teórica 2</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (5, 'Atividade teórica 2', 'Vogais', 'AT');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-AtividadeTeorica2Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 1, '1. Apresentação das Vogais', 
+				'Comece apresentando as cinco vogais (A, E, I, O, U) em cartazes coloridos, músicas ou vídeos educativos. Repita os sons junto com a criança e incentive-a a repetir.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-AtividadeTeorica2Texto2" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 2, '', 
+				'Dica prática: associe cada vogal a uma palavra e imagem do cotidiano: A de Abacaxi, E de Elefante, I de Ilha, O de Olho, U de Urso.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-AtividadeTeorica2Texto3" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 3, '2. Músicas e Brincadeiras', 
+				'As músicas infantis ajudam muito na memorização das vogais. Quanto mais repetitivas e divertidas, melhor!')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-AtividadeTeorica2Texto4" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 4, '', 
+				'Atividade: cante músicas que falem das vogais (como o “A, E, I, O, U”) e peça para a criança bater palmas ou dar pulinhos cada vez que ouvir a vogal escolhida do dia.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-AtividadeTeorica2Texto5" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 5, '3. Vogais no Corpo e no Espaço', 
+				'Explorar o corpo e o ambiente ajuda a fixar o aprendizado.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-AtividadeTeorica2Texto6" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 6, '', 
+				'Atividade: peça para a criança formar as vogais com o corpo ou com objetos da casa (por exemplo, usar uma corda para desenhar um “O” no chão e pular dentro dele).')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="8-AtividadeTeorica2Texto7" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 7, '4. Caça-Vogais', 
+				'Mostre que as vogais estão em todas as palavras e incentive a criança a reconhecê-las. ')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="9-AtividadeTeorica2Texto8" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (5, 8, '', 
+				'Atividade: recortar revistas e circular as vogais encontradas.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="10-AtividadeTeorica2SugestaoVideo1" author="Leonardo Martins">
+		<comment>Inserindo sugestão de video na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_link_youtube)
+			values (5, 9, 'AEIOU', 'Animaguel', 'https://www.youtube.com/watch?v=WyA6GscP4DA')
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

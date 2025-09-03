@@ -38,7 +38,10 @@ public class AtividadePaiSugestaoVideo {
 	@Column(name = "ds_titulo")
 	private String titulo;
 
+	@Column(name = "ds_autor")
+	private String autor;
+	
 	@Column(name = "ds_link_youtube")
-	private String descricao;
+	private String link;
 	
 }

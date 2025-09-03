@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+		<changeSet id="1-InserindoAtividadePratica3" author="Leonardo Martins">
+		<comment>Inserindo atividade prática 3</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (10, 'Atividade prática 3', 'Escrita de nomes', 'AP');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-AtividadePratica3Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na atividade prática</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (10, 1, '', 
+				'Agora que a criança já conhece as letras do alfabeto, é um bom momento para começar a escrever palavras. Uma maneira simples e divertida é pedir que ela escreva nomes:')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-AtividadePratica3Texto2" author="Leonardo Martins">
+		<comment>Inserindo texto na atividade prática</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (10, 2, '', 
+				'&lt;ul&gt;
+					&lt;li&gt;&lt;b&gt;O próprio nome&lt;/b&gt; (primeiro e, depois, o nome completo);&lt;/li&gt;
+					&lt;li&gt;&lt;b&gt;Nomes da família&lt;/b&gt; (pai, mãe, irmãos, avós);&lt;/li&gt;
+					&lt;li&gt;&lt;b&gt;Nomes de amigos ou colegas da escola;&lt;/b&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;b&gt;Nomes de objetos ou personagens que ela gosta&lt;/b&gt; (por exemplo: “LULU” para o cachorro, “FROZEN”, etc.).&lt;/li&gt;
+				&lt;/ul&gt;')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-AtividadePratica3Texto3" author="Leonardo Martins">
+		<comment>Inserindo texto na atividade prática</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (10, 3, '', 
+				'Não se preocupe se ela copiar ou decorar no começo. Esse exercício já ajuda a treinar a escrita, reforçar a forma das letras e perceber que elas se juntam para formar palavras.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-AtividadePratica3Texto4" author="Leonardo Martins">
+		<comment>Inserindo texto na atividade prática</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (10, 4, '', 
+				'Você pode transformar em brincadeira, escrevendo a palavra em um papel e pedindo para ela tentar copiar ou adivinhar quais letras vêm primeiro.')
+		</sql>
+	</changeSet>
+
+	
+</databaseChangeLog>

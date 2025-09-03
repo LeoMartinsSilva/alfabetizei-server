@@ -41,7 +41,7 @@ public class AtividadePaiTexto {
 	@Column(name = "ds_texto")
 	private String texto;
 
-	@Column(name = "ds_imagem_base64")
-	private String imagemBase64;
+	@Column(name = "fl_tem_imagem")
+	private Boolean temImagem;
 	
 }

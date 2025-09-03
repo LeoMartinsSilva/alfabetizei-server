@@ -38,7 +38,9 @@
 				id_atividade_filho_letras_pontilhadas bigint default NEXTVAL('seq_atividade_filho_letras_pontilhadas'::regclass) not null,
 				id_atividade_filho bigint not null,
 				sq_interno_atividade integer not null,
-				ds_letras VARCHAR(50) not null,
+				ds_letras VARCHAR(50),
+				fl_variavel varchar(2),
+				fl_usa_nomes boolean default false,
 				CONSTRAINT pk_atividade_filho_letras_pontilhadas PRIMARY KEY(id_atividade_filho_letras_pontilhadas),
 				CONSTRAINT fl_ativ_fil_let_pon_atividade_filho FOREIGN KEY (id_atividade_filho) REFERENCES atividade_filho(id_atividade_filho) on delete cascade
 			);
@@ -102,6 +104,7 @@
 				id_atividade_filho_escolha bigint not null,
 				sq_opcao integer not null,
 				ds_opcao VARCHAR(50) NOT NULL,
+				fl_tem_imagem boolean default false,
 				fl_opcao_correta boolean not null,
 				CONSTRAINT pk_atividade_filho_escolha_opcao PRIMARY KEY(id_atividade_filho_escolha_opcao),
 				CONSTRAINT fl_ativ_fil_esc_opc_atividade_filho FOREIGN KEY (id_atividade_filho_escolha) REFERENCES atividade_filho_escolha(id_atividade_filho_escolha) on delete cascade
@@ -148,7 +151,9 @@
 				id_atividade_filho_letras_pontilhadas_usuario bigint default NEXTVAL('seq_atividade_filho_letras_pontilhadas_usuario'::regclass) not null,
 				id_atividade_filho_usuario bigint not null,
 				sq_interno_atividade integer not null,
-				ds_letras VARCHAR(50) not null,
+				ds_letras VARCHAR(50),
+				fl_variavel varchar(2),
+				fl_usa_nomes boolean default false,
 				ds_desenho_base64 text,
 				CONSTRAINT pk_atividade_filho_letras_pontilhadas_usuario PRIMARY KEY(id_atividade_filho_letras_pontilhadas_usuario),
 				CONSTRAINT fl_ativ_fil_let_pon_usu_atividade_filho_usuario FOREIGN KEY (id_atividade_filho_usuario) REFERENCES atividade_filho_usuario(id_atividade_filho_usuario) on delete cascade
@@ -218,6 +223,7 @@
 				id_atividade_filho_escolha_usuario bigint not null,
 				sq_opcao integer not null,
 				ds_opcao VARCHAR(50) NOT NULL,
+				fl_tem_imagem boolean default false,
 				fl_opcao_correta boolean not null,
 				fl_opcao_escolhida boolean, 
 				CONSTRAINT pk_atividade_filho_escolha_opcao_usuario PRIMARY KEY(id_atividade_filho_escolha_opcao_usuario),

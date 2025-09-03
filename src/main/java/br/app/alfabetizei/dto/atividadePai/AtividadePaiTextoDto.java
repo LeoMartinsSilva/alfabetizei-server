@@ -15,5 +15,5 @@ public class AtividadePaiTextoDto {
 	private Integer sequencial;
 	private String titulo;
 	private String texto;
-	private String imagemBase64;
+	private Boolean temImagem;
 }

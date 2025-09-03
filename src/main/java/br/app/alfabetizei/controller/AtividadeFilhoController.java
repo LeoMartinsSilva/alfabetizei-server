@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.app.alfabetizei.dto.ImageDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoUsuarioDto;
 import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeContarSilabasResponderDto;
 import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeEscolhaResponderDto;
@@ -33,6 +34,18 @@ public class AtividadeFilhoController {
 	@GetMapping("/{id}")
 	public ResponseEntity<AtividadeFilhoUsuarioDto> buscarPorId(@PathVariable Long id){
 		return ResponseEntity.ok(service.buscarAtividade(id));
+	}
+	
+	@GetMapping("/imagem/escolhaOpcao/{idAtividade}/{sequencial}/{sequencialOpcao}")
+	public ResponseEntity<byte[]> buscarImagemOpcao(@PathVariable Long idAtividade, @PathVariable Long sequencial, @PathVariable Long sequencialOpcao){
+		ImageDto image = service.buscarImagemOpcao(idAtividade, sequencial, sequencialOpcao);
+		return ResponseEntity.ok().contentType(image.getType()).body(image.getBytes());
+	}
+	
+	@GetMapping("/imagem/contarSilabas/{idAtividade}/{sequencial}")
+	public ResponseEntity<byte[]> buscarImagemContarSilabas(@PathVariable Long idAtividade, @PathVariable Long sequencial){
+		ImageDto image = service.buscarImagemContarSilabas(idAtividade, sequencial);
+		return ResponseEntity.ok().contentType(image.getType()).body(image.getBytes());
 	}
 	
 	@PostMapping("/responder/letrasPontilhadas")

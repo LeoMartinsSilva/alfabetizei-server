@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    
+    <changeSet id="1-InserindoLeituraCompartilhada2" author="Leonardo Martins">
+		<comment>Inserindo leitura compartilhada 2</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (2, 'Leitura compartilhada 2', '', 'LC');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-LeituraCompartilhada2Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (2, 1, '1. Como tornar a leitura compartilhada mais divertida?', 
+				'Para contar histórias para uma crianças, use uma linguagem simples e envolvente, sempre variando o tom de voz para dar vida aos personagens. Use expressões faciais e gestos para deixar a narrativa mais divertida e cativante. Isso ajuda a prender a atenção e estimula a imaginação da criança.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-LeituraCompartilhada2Texto2" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (2, 2, '', 
+				'Também é importante deixar a criança participar, fazendo perguntas como “o que você acha que vai acontecer agora?” ou “como você faria no lugar do personagem?”. Assim, ela se sente parte da história, desenvolve a criatividade e aprende valores de forma leve e prazerosa.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-LeituraCompartilhada2Texto3" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (2, 3, '2. Sugestões de leitura', 
+				'Os livros sugeridos abaixo tem como objetivo estimular a consciência fonológica. Por meio dessas histórias, as crianças entram em contato com rimas, sons e jogos de palavras. Isso favorece o desenvolvimento da linguagem oral e da leitura inicial. Assim, a consciência fonológica é estimulada de forma lúdica e prazerosa.'
+			)
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-LeituraCompartilhada2Sugestao1" author="Leonardo Martins">
+		<comment>Inserindo sugestao de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (2, 4, 'Rita, não grita!', 
+				'Conta a história de Rita Magrela, uma menina que vive fazendo birra e gritando por qualquer motivo. Seus amigos se cansam desse comportamento e começam a se afastar. Sozinha e triste, Rita percebe que precisa mudar para reconquistar a amizade deles. Com a ajuda de sua avó, ela aprende a controlar suas emoções e a se comunicar de forma mais tranquila. A história ensina sobre a importância do autocontrole, do diálogo e do respeito nas relações interpessoais.'
+			)
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-LeituraCompartilhada2Sugestao2" author="Leonardo Martins">
+		<comment>Inserindo sugestao de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (2, 5, 'Brasileirinhos da Amazônia', 
+				'Neste livro, os autores homenageiam diversos animais que habitam a maior floresta tropical do mundo.A combinação de versos cativantes e ilustrações coloridas torna a leitura envolvente e acessível. Além de entreter, o livro contribui para o desenvolvimento da consciência ambiental desde cedo.'
+			)
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-LeituraCompartilhada2Sugestao3" author="Leonardo Martins">
+		<comment>Inserindo sugestão de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (2, 6, 'Ou Isto ou Aquilo',
+				'É uma coleção de poemas curtos, divertidos e cheios de imaginação que brincam com escolhas e opostos do cotidiano. Você pode tornar a leitura diária especial, escolhendo um ou dois poemas por dia para compartilhar com seu filho. Os poemas estimulam a imaginação, a reflexão e a consciência linguística da criança.'
+			)	
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

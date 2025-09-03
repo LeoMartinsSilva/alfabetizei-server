@@ -25,7 +25,8 @@ public class AtividadeFilhoEscolhaOpcaoMapper extends AbstractMapper<AtividadeFi
                 .atividadeFilhoEscolha(entity.getAtividadeFilhoEscolha()!=null? atividadeFilhoEscolhaMapper.toDto(entity.getAtividadeFilhoEscolha()) :null)
                 .sequencial(entity.getSequencial())
                 .descricao(entity.getDescricao())
-                .opcaoCorreta(entity.getOpcaoCorreta());
+                .opcaoCorreta(entity.getOpcaoCorreta())
+                .temImagem(entity.getTemImagem());
 
         return builder.build();
     }
@@ -38,7 +39,8 @@ public class AtividadeFilhoEscolhaOpcaoMapper extends AbstractMapper<AtividadeFi
                 .atividadeFilhoEscolha(dto.getAtividadeFilhoEscolha()!=null? atividadeFilhoEscolhaMapper.toEntity(dto.getAtividadeFilhoEscolha()) :null)
                 .sequencial(dto.getSequencial())
                 .descricao(dto.getDescricao())
-                .opcaoCorreta(dto.getOpcaoCorreta());
+                .opcaoCorreta(dto.getOpcaoCorreta())
+                .temImagem(dto.getTemImagem());
     	
          return builder.build();
     }

@@ -16,6 +16,5 @@ public class AtividadePaiSugestaoLeituraDto {
 	private Integer sequencial;
 	private String titulo;
 	private String descricao;
-	private String imagemBase64;
 	
 }
