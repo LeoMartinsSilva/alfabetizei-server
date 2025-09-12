@@ -26,7 +26,7 @@ public class AtividadePaiSugestaoVideoMapper extends AbstractMapper<AtividadePai
                 .sequencial(entity.getSequencial())
                 .titulo(entity.getTitulo())
                 .autor(entity.getAutor())
-                .link(entity.getLink());
+                .idYoutube(entity.getIdYoutube());
 
         return builder.build();
     }
@@ -40,7 +40,7 @@ public class AtividadePaiSugestaoVideoMapper extends AbstractMapper<AtividadePai
                 .sequencial(dto.getSequencial())
                 .titulo(dto.getTitulo())
                 .autor(dto.getAutor())
-                .link(dto.getLink());
+                .idYoutube(dto.getIdYoutube());
     	
          return builder.build();
     }

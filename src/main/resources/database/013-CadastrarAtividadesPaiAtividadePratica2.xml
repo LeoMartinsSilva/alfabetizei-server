@@ -7,8 +7,8 @@
 	<changeSet id="1-InserindoAtividadePratica2" author="Leonardo Martins">
 		<comment>Inserindo atividade prática 2</comment>
 		<sql>
-			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (9, 'Atividade prática 2', 'Caça-consoantes', 'AP');
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos) 
+			values (9, 'Atividade prática 2', 'Caça-consoantes', 'AP', 30);
 		</sql>
 	</changeSet>
 	

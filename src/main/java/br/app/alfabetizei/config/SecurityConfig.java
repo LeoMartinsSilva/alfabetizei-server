@@ -21,6 +21,9 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/usuario/criar").permitAll() 
+                        .requestMatchers("/atividadePai/imagem/**").permitAll()
+                        .requestMatchers("/atividadeFilho/imagem/**").permitAll()
+                        .requestMatchers("/atividadeFilho/audio/**").permitAll()
                         .anyRequest().authenticated() 
                 )
                 .formLogin(form -> form.disable())

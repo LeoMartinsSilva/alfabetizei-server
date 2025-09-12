@@ -6,4 +6,6 @@ import br.app.alfabetizei.model.atividadeFilho.AtividadeFilho;
 
 public interface AtividadeFilhoRepository extends JpaRepository<AtividadeFilho, Long> {
 
+	Long countByContaEstrelas(boolean contaEstrelas);
+
 }

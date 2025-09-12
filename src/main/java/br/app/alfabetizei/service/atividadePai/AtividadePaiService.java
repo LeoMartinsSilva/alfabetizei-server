@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import br.app.alfabetizei.dto.ImageDto;
 import br.app.alfabetizei.dto.UsuarioDto;
 import br.app.alfabetizei.dto.atividadePai.AtividadePaiDto;
+import br.app.alfabetizei.dto.atividadePai.AtividadePaiResumoDto;
 import br.app.alfabetizei.dto.atividadePai.AtividadePaiUsuarioDto;
 import br.app.alfabetizei.enums.StatusAtividadePaiEnum;
 import br.app.alfabetizei.mapper.atividadePai.AtividadePaiMapper;
@@ -64,10 +65,33 @@ public class AtividadePaiService {
 				atividadeUsuario.setAtividadePai(atividadePai);
 				atividadeUsuario.setUsuario(UsuarioDto.builder().id(idUsuario).build());
 				atividadeUsuario.setStatus(atividadeDependenciaService.isAtividadeDesbloqueada(atividadePai.getId(), idUsuario)?StatusAtividadePaiEnum.LIBERADA:StatusAtividadePaiEnum.BLOQUEADA);		
+				AtividadePaiUsuario atividadeUsuarioSalvo = atividadeUsuarioRepository.save(atividadeUsuarioMapper.toEntity(atividadeUsuario));
+				atividadeUsuario.setId(atividadeUsuarioSalvo.getId());
+				
+			}else {
+				if(!atividadeUsuario.getStatus().equals(StatusAtividadePaiEnum.FINALIZADA)) {
+					atividadeUsuario.setStatus(atividadeDependenciaService.isAtividadeDesbloqueada(atividadePai.getId(), idUsuario)?StatusAtividadePaiEnum.LIBERADA:StatusAtividadePaiEnum.BLOQUEADA);			
+				}
+				
 			}
 			
 			atividadesUsuario.add(atividadeUsuario);
 		}
+		
+		atividadesUsuario.sort((atividadeAnterior, atividade)->{
+			if(atividadeAnterior.getStatus().equals(StatusAtividadePaiEnum.LIBERADA) && atividade.getStatus().equals(StatusAtividadePaiEnum.BLOQUEADA)) {
+				return -1;
+			} else if(atividade.getStatus().equals(StatusAtividadePaiEnum.LIBERADA) && atividadeAnterior.getStatus().equals(StatusAtividadePaiEnum.BLOQUEADA)) {
+				return 1;
+			}
+			if(atividadeAnterior.getStatus().equals(StatusAtividadePaiEnum.FINALIZADA)&& (atividade.getStatus().equals(StatusAtividadePaiEnum.BLOQUEADA) || atividade.getStatus().equals(StatusAtividadePaiEnum.LIBERADA))) {
+				return 1;
+			}
+			if(atividade.getStatus().equals(StatusAtividadePaiEnum.FINALIZADA)&& (atividadeAnterior.getStatus().equals(StatusAtividadePaiEnum.BLOQUEADA) || atividadeAnterior.getStatus().equals(StatusAtividadePaiEnum.LIBERADA))) {
+				return -1;
+			}
+			return 0;
+		});
 		
 		return atividadesUsuario;
 	}
@@ -108,5 +132,13 @@ public class AtividadePaiService {
 
 	public ImageDto getImage(Long idAtividade, Integer sequencial) {
 		return ImageUtil.getImage("images/atividade_pai/" + idAtividade + "/" + sequencial);
+	}
+
+
+	public AtividadePaiResumoDto buscarResumo() {
+		return AtividadePaiResumoDto.builder()
+				.numeroDeAtividades(repository.count())
+				.atividadesRealizadas(atividadeUsuarioRepository.countByUsuarioIdAndFinalizada(usuarioLogadoService.getUsuarioLogado().getId()))
+				.build();
 	}
 }

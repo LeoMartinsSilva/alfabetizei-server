@@ -24,6 +24,7 @@ public class AtividadePaiUsuarioMapper extends AbstractMapper<AtividadePaiUsuari
 	
     @Override
     public AtividadePaiUsuarioDto toDto(AtividadePaiUsuario entity) {
+    	if(entity == null) return null;
     	
     	AtividadePaiUsuarioDtoBuilder builder = AtividadePaiUsuarioDto.builder()
                 .id(entity.getId())
@@ -38,7 +39,8 @@ public class AtividadePaiUsuarioMapper extends AbstractMapper<AtividadePaiUsuari
 
     @Override
     public AtividadePaiUsuario toEntity(AtividadePaiUsuarioDto dto) {
-
+    	if(dto == null) return null;
+    	
     	AtividadePaiUsuarioBuilder builder = AtividadePaiUsuario.builder()
     			.id(dto.getId())
                 .atividadePai(dto.getAtividadePai()!=null?atividadePaiMapper.toEntity(dto.getAtividadePai()):null)

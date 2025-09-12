@@ -7,8 +7,8 @@
 	<changeSet id="1-InserindoAtividadeFilhoAtividade10" author="Leonardo Martins">
 		<comment>Inserindo atividade filho</comment>
 		<sql>
-			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (10, 'Atividade 10', 'Selecionar opções que rimam', 'ME');
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos) 
+			values (10, 'Atividade 10', 'Selecionar opções que rimam', 'MD', 5);
 		</sql>
 	</changeSet>
 
@@ -18,17 +18,17 @@
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
 			values (26, 10, 1);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (26, 1, 'Rato', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (26, 1, 'Rato', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (26, 2, 'Mesa', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (26, 2, 'Mesa', false, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (26, 3, 'Pato', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (26, 3, 'Pato', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (26, 4, 'Menino', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (26, 4, 'Menino', false, true);
 			
 		</sql>
 	</changeSet>
@@ -39,17 +39,17 @@
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
 			values (27, 10, 2);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (27, 1, 'Amarela', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (27, 1, 'Cinderela', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (27, 2, 'Gaveta', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (27, 2, 'Gaveta', false, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (27, 3, 'Panela', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (27, 3, 'Panela', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (27, 4, 'Casa', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (27, 4, 'Casa', false, true);
 			
 		</sql>
 	</changeSet>
@@ -60,17 +60,17 @@
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
 			values (28, 10, 3);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (28, 1, 'Jacaré', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (28, 1, 'Jacaré', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (28, 2, 'Pé', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (28, 2, 'Pé', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (28, 3, 'Tubarão', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (28, 3, 'Tubarão', false, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (28, 4, 'Camelo', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (28, 4, 'Camelo', false, true);
 			
 		</sql>
 	</changeSet>
@@ -81,17 +81,17 @@
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
 			values (29, 10, 4);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (29, 1, 'Gorila', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (29, 1, 'Gorila', false, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (29, 2, 'Boneca', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (29, 2, 'Boneca', false, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (29, 3, 'Tubarão', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (29, 3, 'Tubarão', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (29, 4, 'Mão', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (29, 4, 'Mão', true, true);
 			
 		</sql>
 	</changeSet>
@@ -102,17 +102,17 @@
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
 			values (30, 10, 5);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (30, 1, 'Macaco', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (30, 1, 'Macaco', false, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (30, 2, 'Sacola', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (30, 2, 'Sacola', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (30, 3, 'Bola', true);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (30, 3, 'Bola', true, true);
 			
-			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (30, 4, 'Galho', false);
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta, fl_tem_imagem)
+			values (30, 4, 'Galho', false, true);
 			
 		</sql>
 	</changeSet>

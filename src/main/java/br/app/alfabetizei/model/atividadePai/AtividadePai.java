@@ -35,4 +35,7 @@ public class AtividadePai {
 	@Column(name = "fl_tipo")
 	private String tipo;
 	
+	@Column(name="vl_tempo_estimado_minutos")
+	private Integer tempoEstimadoMinutos;
+	
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="1-CriaSequenceUsuario" author="Leonardo Martins">
+		<comment>Criando sequence para a tabela usuario</comment>
+		<sql>
+		    CREATE SEQUENCE seq_usuario INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-CriaTabelaUsuario" author="Leonardo Martins">
+		<comment>Criando a tabela usuario</comment>
+		<sql>
+		    create table usuario (
+				id_usuario bigint default NEXTVAL('seq_usuario'::regclass) not null,
+				ds_nome VARCHAR(100),
+				ds_nomeMae VARCHAR(100),
+				ds_nomePai VARCHAR(100),
+				ds_modeloCelular VARCHAR(100),
+				CONSTRAINT pk_usuario PRIMARY KEY(id_usuario)
+			);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-AlterarCamposComNomesErradosNaTabelaUsuario" author="Leonardo Martins">
+		<comment>Alterando campos com nomes errados na tabela de usuario</comment>
+		<sql>
+			alter table usuario
+			drop column ds_nomeMae;
+			
+			alter table usuario
+			drop column ds_nomePai;
+			
+			
+			alter table usuario
+			drop column ds_modeloCelular;
+			
+			alter table usuario
+			add column ds_nome_mae varchar(100);
+		
+			alter table usuario
+			add column ds_nome_pai varchar(100);
+			
+			alter table usuario
+			add column ds_modelo_celular varchar(100);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-AdicionandoUUIDUsuario" author="Leonardo Martins">
+		<comment>Alterando campos com nomes errados na tabela de usuario</comment>
+		<sql>
+			alter table usuario
+			add column ds_uuid varchar(40);
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

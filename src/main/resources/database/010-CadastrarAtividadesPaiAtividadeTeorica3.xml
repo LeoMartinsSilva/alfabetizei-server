@@ -7,8 +7,8 @@
 	<changeSet id="1-InserindoAtividadeTeorica3" author="Leonardo Martins">
 		<comment>Inserindo atividade teórica 3</comment>
 		<sql>
-			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (6, 'Atividade teórica 3', 'Consoantes', 'AT');
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos) 
+			values (6, 'Atividade teórica 3', 'Consoantes', 'AT', 60);
 		</sql>
 	</changeSet>
 	
@@ -60,16 +60,16 @@
 	<changeSet id="7-AtividadeTeorica3SugestaoVideo1" author="Leonardo Martins">
 		<comment>Inserindo Sugestão de video na atividadeTeorica</comment>
 		<sql>
-			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_link_youtube)
-			values (6, 6, 'Abecedário da xuxa', 'Xuxa', 'https://www.youtube.com/watch?v=ndpwLu_oyHs')
+			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_id_youtube)
+			values (6, 6, 'Abecedário da xuxa', 'Xuxa', 'ndpwLu_oyHs')
 		</sql>
 	</changeSet>
 	
 	<changeSet id="8-AtividadeTeorica3SugestaoVideo2" author="Leonardo Martins">
 		<comment>Inserindo Sugestão de video na atividadeTeorica</comment>
 		<sql>
-			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_link_youtube)
-			values (6, 7, 'Alfabeto - Vogais e Consoantes', 'Prof Fabíola Dias', 'https://www.youtube.com/watch?v=XL09H-o7UEk')
+			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_id_youtube)
+			values (6, 7, 'Alfabeto - Vogais e Consoantes', 'Prof Fabíola Dias', 'XL09H-o7UEk')
 		</sql>
 	</changeSet>
 	

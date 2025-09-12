@@ -17,6 +17,8 @@ public class AtividadeFilhoDto {
 	private String titulo;
 	private String subtitulo;
 	private TipoAtividadeFilhoEnum tipo;
+	private Integer tempoEstimadoMinutos;
+	private Boolean contaEstrelas;
 	private List<AtividadeFilhoContarSilabasDto> itensContarSilabas;
 	private List<AtividadeFilhoEscolhaDto> itensEscolha;
 	private List<AtividadeFilhoLetrasPontilhadasDto> itensLetrasPontilhadas;

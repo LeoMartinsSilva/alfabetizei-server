@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 import br.app.alfabetizei.dto.ImageDto;
 import br.app.alfabetizei.dto.UsuarioDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoDto;
+import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoResumoDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoUsuarioDto;
 import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeContarSilabasResponderDto;
+import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeEscolhaDuasOpcoesResponderDto;
 import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeEscolhaResponderDto;
 import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeLetrasPontilhadasResponderDto;
 import br.app.alfabetizei.enums.StatusAtividadeFilhoEnum;
@@ -114,6 +116,11 @@ public class AtividadeFilhoService {
 	}
 	
 	@Transactional
+	public void responderItemEscolha(AtividadeEscolhaDuasOpcoesResponderDto dados) {
+		escolhaService.responder(dados);
+	}
+	
+	@Transactional
 	public void responderItemContarSilabas(AtividadeContarSilabasResponderDto dados) {
 		contarSilabasService.responder(dados);
 	}
@@ -148,10 +155,21 @@ public class AtividadeFilhoService {
 		if (atividadeUsuario.getAtividadeFilho().getTipo().equals(TipoAtividadeFilhoEnum.MULTIPLA_ESCOLHA.getCodigo())) {
 			return escolhaService.buscarNotaPorAtividade(atividadeUsuario.getId());
 		}
+		if (atividadeUsuario.getAtividadeFilho().getTipo().equals(TipoAtividadeFilhoEnum.MULTIPLA_ESCOLHA_DUAS_OPCOES.getCodigo())) {
+			return escolhaService.buscarNotaPorAtividade(atividadeUsuario.getId());
+		}
 		return 0;
 	}
 
-
+	public AtividadeFilhoResumoDto buscarResumo() {
+		Long estrelasColetadas = atividadeUsuarioRepository.getEstrelasColetadasByUsuarioId(usuarioLogadoService.getUsuarioLogado().getId());
+		return AtividadeFilhoResumoDto.builder()
+				.numeroDeAtividades(repository.count())
+				.atividadesRealizadas(atividadeUsuarioRepository.countByUsuarioIdAndFinalizada(usuarioLogadoService.getUsuarioLogado().getId()))
+				.numeroDeEstrelas(repository.countByContaEstrelas(true)*5)
+				.estrelasColetadas(estrelasColetadas != null ? estrelasColetadas:0l)
+				.build();
+	}
 
 	public ImageDto buscarImagemOpcao(Long idAtividade, Long sequencial, Long sequencialOpcao) {
 		return ImageUtil.getImage("images/atividade_filho/" + idAtividade + "/escolha_opcao/" + sequencial + "/" + sequencialOpcao);

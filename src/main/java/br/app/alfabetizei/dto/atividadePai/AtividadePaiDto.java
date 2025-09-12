@@ -17,6 +17,7 @@ public class AtividadePaiDto {
 	private String titulo;
 	private String subtitulo;
 	private TipoAtividadePaiEnum tipo;
+	private Integer tempoEstimadoMinutos;
 	private List<AtividadePaiSugestaoLeituraDto> itensLeitura;
 	private List<AtividadePaiSugestaoVideoDto> itensVideo;
 	private List<AtividadePaiTextoDto> itensTexto;

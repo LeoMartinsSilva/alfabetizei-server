@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.app.alfabetizei.dto.ImageDto;
+import br.app.alfabetizei.dto.atividadePai.AtividadePaiResumoDto;
 import br.app.alfabetizei.dto.atividadePai.AtividadePaiUsuarioDto;
 import br.app.alfabetizei.service.atividadePai.AtividadePaiService;
 
@@ -35,6 +36,11 @@ public class AtividadePaiController {
 	public ResponseEntity<Void> finalizarAtividade(@PathVariable Long id){
 		service.marcarComoFeito(id);
 		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping("/resumo")
+	public ResponseEntity<AtividadePaiResumoDto> buscarResumo(){
+		return ResponseEntity.ok(service.buscarResumo());
 	}
 	
 	@GetMapping("/imagem/{id}/{sequencial}")

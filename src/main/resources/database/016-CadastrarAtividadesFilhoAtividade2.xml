@@ -7,8 +7,8 @@
 	<changeSet id="1-InserindoAtividadeAtividade2" author="Leonardo Martins">
 		<comment>Inserindo atividade filho</comment>
 		<sql>
-			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (2, 'Atividade 2', 'Escrever vogal correta', 'ME');
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos) 
+			values (2, 'Atividade 2', 'Escolher vogal correta', 'ME', 5);
 		</sql>
 	</changeSet>
 
@@ -37,7 +37,7 @@
 		<comment>Inserindo atividade filho</comment>
 		<sql>
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
-			values (2, 2, 1);
+			values (2, 2, 2);
 			
 			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
 			values (2, 1, 'A', false);
@@ -58,7 +58,7 @@
 		<comment>Inserindo atividade filho</comment>
 		<sql>
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
-			values (3, 2, 1);
+			values (3, 2, 3);
 			
 			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
 			values (3, 1, 'U', true);
@@ -79,7 +79,7 @@
 		<comment>Inserindo atividade filho</comment>
 		<sql>
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
-			values (4, 2, 1);
+			values (4, 2, 4);
 			
 			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
 			values (4, 1, 'A', false);
@@ -100,7 +100,7 @@
 		<comment>Inserindo atividade filho</comment>
 		<sql>
 			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
-			values (5, 2, 1);
+			values (5, 2, 5);
 			
 			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
 			values (5, 1, 'U', false);

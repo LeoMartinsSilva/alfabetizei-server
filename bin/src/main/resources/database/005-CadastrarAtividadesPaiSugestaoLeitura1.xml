@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    
+    <changeSet id="1-InserindoLeituraCompartilhada1" author="Leonardo Martins">
+		<comment>Inserindo leitura compartilhada 1</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (1, 'Leitura compartilhada 1', '', 'LC');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-LeituraCompartilhada1Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (1, 1, '1. O que é leitura compartilhada', 
+				'Leitura compartilhada é a prática de ler um livro junto com outra pessoa, alternando ou acompanhando a leitura. Ela favorece a compreensão, amplia o vocabulário e estimula o interesse pela leitura de forma colaborativa e prazerosa.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-LeituraCompartilhada1Texto2" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (1, 2, '', 
+				'A &lt;b&gt;leitura compartilhada&lt;/b&gt; desempenha um papel fundamental no processo de alfabetização, pois é nesse momento que a criança percebe a utilidade da leitura, desperta a curiosidade e desenvolve o interesse pelo hábito de ler.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-LeituraCompartilhada1Texto3" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (1, 3, '2. Sugestões de leitura', 
+				'A seguir, você encontrará três sugestões de livros para leitura compartilhada. Escolha o momento do dia que considerar mais agradável para essa atividade. Por exemplo, ler uma história à noite pode ser uma maneira especial de encerrar o dia.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-LeituraCompartilhada1Texto4" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (1, 4, '', 
+				'Você não precisa escolher necessariamente um desses livros. Se preferir outro título ou já tiver um livro infantil em casa, pode utilizá-lo para realizar a atividade.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-LeituraCompartilhada1Sugestao1" author="Leonardo Martins">
+		<comment>Inserindo sugestao de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (1, 5, 'Pandolfo Bereba', 
+				'Conta a história de um menino que adorava dar notas para todo mundo. Ele observava as pessoas e inventava critérios engraçados para avaliá-las. Mas logo percebeu que essa mania podia causar confusões. A história, cheia de humor, faz pensar sobre respeito e convivência. É uma leitura divertida e leve para as crianças.'
+			)
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-LeituraCompartilhada1Sugestao2" author="Leonardo Martins">
+		<comment>Inserindo sugestao de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (1, 6, 'Chapeuzinho Vermelho', 
+				'Clássico conto de fadas sobre uma menina que atravessa a floresta para visitar a avó e encontra um lobo astuto no caminho. Curto, envolvente e repleto de diálogos, é ideal para leitura interativa. Disponível em várias edições ilustradas e acessíveis.'
+			)
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-LeituraCompartilhada1Sugestao3" author="Leonardo Martins">
+		<comment>Inserindo sugestão de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (1, 7, 'O lobo que caiu do livro',
+				'Conta a história de um lobo que, por acidente, cai para fora das páginas de seu livro. Perdido, ele precisa encontrar um novo lugar para viver e se depara com diferentes histórias em busca de abrigo. Durante essa aventura, o lobo percebe que não é tão assustador quanto pensava. A narrativa é divertida, criativa e cheia de ilustrações cativantes. É uma obra que estimula a imaginação e mostra o poder dos livros e das histórias.'
+			)
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

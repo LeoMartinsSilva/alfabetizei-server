@@ -7,8 +7,8 @@
 	<changeSet id="1-InserindoAtividadeFilhoAtividade5" author="Leonardo Martins">
 		<comment>Inserindo atividade filho</comment>
 		<sql>
-			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (5, 'Atividade 5', 'Escolher objetos corretos', 'ME');
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos) 
+			values (5, 'Atividade 5', 'Escolher objetos corretos', 'ME', 5);
 		</sql>
 	</changeSet>
 	

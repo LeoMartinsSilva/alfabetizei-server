@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+    <changeSet id="1-InserindoDependenciasLeituraCompartilhada" author="Leonardo Martins">
+		<comment>inserindo dependencias leitura compartilhada</comment>
+		<sql>
+		    insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (2, 1, null);
+			
+			insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (3, 2, null);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-InserindoDependenciasAtividadePaiTeorica" author="Leonardo Martins">
+		<comment>inserindo dependencias atividades teóricas</comment>
+		<sql>
+		    insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (5, 4, null);
+			
+			insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (6, 5, null);
+		
+			insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (7, 6, null);
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-InserindoDependenciasAtividadePaiPrática" author="Leonardo Martins">
+		<comment>inserindo dependencias atividades práticas</comment>
+		<sql>
+		    insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (8, 5, null);
+			
+			insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (9, 6, null);
+		
+			insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (9, 8, null);
+			
+			insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (10, 7, null);
+		
+			insert into atividade_pai_dependencia (id_atividade_pai, id_atividade_pai_predecessora, id_atividade_filho_predecessora)
+			values (10, 9, null);
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

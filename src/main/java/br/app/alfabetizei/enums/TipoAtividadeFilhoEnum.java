@@ -7,7 +7,9 @@ import java.util.List;
 public enum TipoAtividadeFilhoEnum {
 	
 	LETRAS_PONTILHADAS("LP", "Letras pontilhadas"), 
+	NOMES_PONTILHADOS("NP", "Nomes pontilhados"),
 	MULTIPLA_ESCOLHA("ME", "Multipla Escolha"),
+	MULTIPLA_ESCOLHA_DUAS_OPCOES("MD", "Multipla Escolha Duas Opções"),
 	SILABAS("S", "Silabas");
 
 	private final String codigo;

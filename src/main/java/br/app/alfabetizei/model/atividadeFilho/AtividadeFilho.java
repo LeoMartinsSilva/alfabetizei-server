@@ -35,4 +35,10 @@ public class AtividadeFilho {
 	@Column(name = "fl_tipo")
 	private String tipo;
 	
+	@Column(name= "vl_tempo_estimado_minutos")
+	private Integer tempoEstimadoMinutos;
+	
+	@Column(name = "fl_conta_estrelas")
+	private Boolean contaEstrelas;
+	
 }

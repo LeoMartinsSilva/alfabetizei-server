@@ -21,7 +21,8 @@ public class AtividadePaiMapper extends AbstractMapper<AtividadePaiDto, Atividad
                 .id(entity.getId())
                 .titulo(entity.getTitulo())
                 .subtitulo(entity.getSubtitulo())
-                .tipo(TipoAtividadePaiEnum.getEnum(entity.getTipo()));
+                .tipo(TipoAtividadePaiEnum.getEnum(entity.getTipo()))
+                .tempoEstimadoMinutos(entity.getTempoEstimadoMinutos());
 
         return builder.build();
     }
@@ -33,7 +34,8 @@ public class AtividadePaiMapper extends AbstractMapper<AtividadePaiDto, Atividad
                 .id(dto.getId())
                 .titulo(dto.getTitulo())
                 .subtitulo(dto.getSubtitulo())
-                .tipo(dto.getTipo().getCodigo());
+                .tipo(dto.getTipo().getCodigo())
+                .tempoEstimadoMinutos(dto.getTempoEstimadoMinutos());
     	
          return builder.build();
     }

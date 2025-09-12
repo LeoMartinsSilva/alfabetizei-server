@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeTeorica4" author="Leonardo Martins">
+		<comment>Inserindo atividade teórica 4</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (7, 'Atividade teórica 4', 'Consciência fonológica', 'AT');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-AtividadeTeorica4Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (7, 1, '', 
+				'Consciência fonológica é a habilidade de perceber e brincar com os sons das palavras, como rimas, sílabas, sons iniciais e finais. Ela ajuda muito na alfabetização, porque prepara a criança para relacionar sons às letras e ler com mais facilidade.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-AtividadeTeorica4Texto2" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (7, 2, '1. Jogo da Rima', 
+				'Como fazer: Escolha palavras que rimam, como “pão” e “cão”. Mostre figuras ou fale em voz alta e peça para a criança encontrar o par que rima.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-AtividadeTeorica4Texto3" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (7, 3, '2. Histórias Sonoras ou Aliterações', 
+				'Como fazer: Crie frases engraçadas onde muitas palavras começam com o mesmo som. Por exemplo: “A abelha amarela ama abacaxi”.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-AtividadeTeorica4Texto4" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (7, 4, '3. “Quantas palavras eu falei?”', 
+				'Como fazer: Fale frases simples, como “O gato bebeu leite”, e pergunte: “Quantas palavras ouviu?”. A criança responde e vocês conversam sobre isso juntas.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-AtividadeTeorica4Texto5" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (7, 5, '4. Caça-Objetos Sonoros', 
+				'Como fazer: Diga um som, como “/p/”, e peça para a criança encontrar um objeto que comece com esse som (pato, panela, peixe).')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-AtividadeTeorica4Texto6" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (7, 6, '5. Leitura em Voz Alta com Sons Repetitivos', 
+				'Como fazer: Escolha livros com rimas ou repetição sonora, como cantigas e parlendas (“O sapo não lava o pé”) e leia com a criança, destacando sons e pedindo para ela repetir trechos.')
+		</sql>
+	</changeSet>
+	
+	
+</databaseChangeLog>

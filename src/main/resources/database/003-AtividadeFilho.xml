@@ -19,6 +19,8 @@
 				ds_titulo VARCHAR(100) not null,
 				ds_subtitulo VARCHAR(100) not null,
 				fl_tipo VARCHAR(2) not null,
+				vl_tempo_estimado_minutos integer not null,
+				fl_conta_estrelas boolean not null default true,
 				CONSTRAINT pk_atividade_filho PRIMARY KEY(id_atividade_filho)
 			);
 		</sql>

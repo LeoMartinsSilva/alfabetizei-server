@@ -21,7 +21,9 @@ public class AtividadeFilhoMapper extends AbstractMapper<AtividadeFilhoDto, Ativ
                 .id(entity.getId())
                 .titulo(entity.getTitulo())
                 .subtitulo(entity.getSubtitulo())
-                .tipo(TipoAtividadeFilhoEnum.getEnum(entity.getTipo()));
+                .tipo(TipoAtividadeFilhoEnum.getEnum(entity.getTipo()))
+                .contaEstrelas(entity.getContaEstrelas())
+                .tempoEstimadoMinutos(entity.getTempoEstimadoMinutos());
 
         return builder.build();
     }
@@ -33,7 +35,9 @@ public class AtividadeFilhoMapper extends AbstractMapper<AtividadeFilhoDto, Ativ
                 .id(dto.getId())
                 .titulo(dto.getTitulo())
                 .subtitulo(dto.getSubtitulo())
-                .tipo(dto.getTipo().getCodigo());
+                .tipo(dto.getTipo().getCodigo())
+                .contaEstrelas(dto.getContaEstrelas())
+                .tempoEstimadoMinutos(dto.getTempoEstimadoMinutos());
     	
          return builder.build();
     }

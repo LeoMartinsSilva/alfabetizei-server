@@ -7,8 +7,8 @@
 	<changeSet id="1-InserindoAtividadeFilhoAtividade3" author="Leonardo Martins">
 		<comment>Inserindo atividade filho</comment>
 		<sql>
-			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (3, 'Atividade 3', 'Escrever consoantes pontilhadas', 'LP');
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos, fl_conta_estrelas) 
+			values (3, 'Atividade 3', 'Escrever consoantes pontilhadas', 'LP', 10, false);
 		</sql>
 	</changeSet>
 
@@ -16,19 +16,19 @@
 		<comment>Inserindo letras pontilhadas</comment>
 		<sql>
 			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
-			values (2, 1, 'B');
+			values (3, 1, 'B');
 		
 			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
-			values (2, 2, 'C');
+			values (3, 2, 'C');
 			
 			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
-			values (2, 3, 'D');
+			values (3, 3, 'D');
 			
 			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
-			values (2, 4, 'F');
+			values (3, 4, 'F');
 			
 			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
-			values (2, 5, 'G');	
+			values (3, 5, 'G');	
 		</sql>
 	</changeSet>
 </databaseChangeLog>

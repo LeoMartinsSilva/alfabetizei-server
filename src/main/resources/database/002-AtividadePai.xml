@@ -19,6 +19,7 @@
 				ds_titulo VARCHAR(100) not null,
 				ds_subtitulo VARCHAR(100) not null,
 				fl_tipo VARCHAR(2) not null,
+				vl_tempo_estimado_minutos integer not null,
 				CONSTRAINT pk_atividade_pai PRIMARY KEY(id_atividade_pai)
 			);
 		</sql>
@@ -85,7 +86,7 @@
 				sq_interno_atividade integer not null,
 				ds_titulo VARCHAR(100) not null,
 				ds_autor varchar(100) not null,
-				ds_link_youtube text not null,
+				ds_id_youtube text not null,
 				CONSTRAINT pk_atividade_pai_sugestao_video PRIMARY KEY(id_atividade_pai_sugestao_video),
 				CONSTRAINT fl_ativ_pai_sug_vid_atividade_pai FOREIGN KEY (id_atividade_pai) REFERENCES atividade_pai(id_atividade_pai) on delete cascade
 			);

@@ -3,6 +3,7 @@ package br.app.alfabetizei.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,15 @@ public class UsuarioController {
 	
 	@Autowired
 	private UsuarioService service;
+	
+	@GetMapping("/logado")
+	public ResponseEntity<UsuarioDto> criar(){
+		UsuarioDto usuario = service.buscarLogado();
+		if(usuario == null) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(usuario);
+	}
 	
 	@PostMapping("/criar")
 	public ResponseEntity<UsuarioDto> criar(@RequestBody UsuarioCriarDto dados){

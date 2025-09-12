@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoEscolhaOpcaoUsuarioDto;
 import br.app.alfabetizei.dto.atividadeFilho.AtividadeFilhoEscolhaUsuarioDto;
+import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeEscolhaDuasOpcoesResponderDto;
 import br.app.alfabetizei.dto.atividadeFilho.responder.AtividadeEscolhaResponderDto;
 import br.app.alfabetizei.enums.StatusAtividadeFilhoItemEnum;
 import br.app.alfabetizei.mapper.atividadeFilho.AtividadeFilhoEscolhaUsuarioMapper;
@@ -84,6 +85,37 @@ public class AtividadeFilhoEscolhaService {
 					item.setStatus(StatusAtividadeFilhoItemEnum.FINALIZADA.getCodigo());
 					opcaoService.marcarComoEscolhida(opcao.getId());
 				}
+			}
+		}
+		
+	}
+	
+	@Transactional
+	public void responder(AtividadeEscolhaDuasOpcoesResponderDto dados) {
+		Long idUsuario = usuarioLogadoService.getUsuarioLogado().getId();
+		
+		Optional<AtividadeFilhoEscolhaUsuario> optional = atividadeFilhoEscolhaUsuarioRepository.findById(dados.getIdAtividadeFilhoEscolhaUsuario());
+		if(optional.isPresent()) {
+			AtividadeFilhoEscolhaUsuario item = optional.get();
+			
+			if(!idUsuario.equals(item.getAtividadeFilhoUsuario().getUsuario().getId())) {
+				throw new RuntimeException("Essa atividade não pertence ao seu usuário");
+			}
+			int acertos = 0;
+			List<AtividadeFilhoEscolhaOpcaoUsuarioDto> opcoes = opcaoService.buscarPorAtividadeId(item, null);
+			for(AtividadeFilhoEscolhaOpcaoUsuarioDto opcao : opcoes) {
+				for(Long idOpcaoEscolhida : dados.getIdOpcoesEscolhidas())
+				if(opcao.getId().equals(idOpcaoEscolhida)) {
+					if(opcao.getOpcaoCorreta()) {
+						acertos++;
+					}
+					opcaoService.marcarComoEscolhida(opcao.getId());
+				}
+			}
+			if(acertos == 2) {
+				item.setAcertou(true);
+				item.setStatus(StatusAtividadeFilhoItemEnum.FINALIZADA.getCodigo());
+				
 			}
 		}
 		

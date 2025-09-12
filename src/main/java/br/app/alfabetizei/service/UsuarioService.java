@@ -46,4 +46,14 @@ public class UsuarioService {
 		}
 		return null;
 	}
+
+	public UsuarioDto buscarLogado() {
+		if(usuarioLogadoService.getUsuarioLogado()!=null) {
+			Optional<Usuario> optional = repository.findById(usuarioLogadoService.getUsuarioLogado().getId());
+			if(optional.isPresent()) {
+				return mapper.toDto(optional.get());
+			}
+		}
+		return null;
+	}
 }

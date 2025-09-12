@@ -8,8 +8,8 @@
     <changeSet id="1-InserindoLeituraCompartilhada3" author="Leonardo Martins">
 		<comment>Inserindo leitura compartilhada 1</comment>
 		<sql>
-			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (3, 'Leitura compartilhada 3', '', 'LC');
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos) 
+			values (3, 'Leitura compartilhada 3', '', 'LC', 30);
 		</sql>
 	</changeSet>
 	

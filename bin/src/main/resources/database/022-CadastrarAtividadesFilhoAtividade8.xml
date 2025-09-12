@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeFilhoAtividade8" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (8, 'Atividade 8', 'Escolher consoante correta', 'ME');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-InserindoAtividadeFilhoAtividade8Escolha1" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (21, 8, 1);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (21, 1, 'C', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (21, 2, 'D', true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (21, 3, 'P', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (21, 4, 'L', false);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-InserindoAtividadeFilhoAtividade8Escolha2" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (22, 8, 2);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (22, 1, 'B', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (22, 2, 'R', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (22, 3, 'T', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (22, 4, 'G', true);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-InserindoAtividadeFilhoAtividade8Escolha3" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (23, 8, 3);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (23, 1, 'C', true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (23, 2, 'Z', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (23, 3, 'X', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (23, 4, 'P', false);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-InserindoAtividadeFilhoAtividade8Escolha4" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (24, 8, 4);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (24, 1, 'S', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (24, 2, 'R', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (24, 3, 'L', true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (24, 4, 'V', false);
+			
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-InserindoAtividadeFilhoAtividade8Escolha5" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho_escolha (id_atividade_filho_escolha, id_atividade_filho, sq_interno_atividade) 
+			values (25, 8, 5);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (25, 1, 'N', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (25, 2, 'M', true);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (25, 3, 'D', false);
+			
+			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
+			values (25, 4, 'C', false);
+			
+		</sql>
+	</changeSet>
+
+	
+</databaseChangeLog>

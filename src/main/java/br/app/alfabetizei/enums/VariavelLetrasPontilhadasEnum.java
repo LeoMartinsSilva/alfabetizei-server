@@ -6,7 +6,7 @@ import java.util.List;
 
 public enum VariavelLetrasPontilhadasEnum {
 	NOME("N", "Nome"), 
-	NOMAE_PAI("NP", "Nome pai"),
+	NOME_PAI("NP", "Nome pai"),
 	NOME_MAE("NM", "Nome mão");
 
 	private final String codigo;

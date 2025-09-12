@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    
+    <changeSet id="1-InserindoLeituraCompartilhada3" author="Leonardo Martins">
+		<comment>Inserindo leitura compartilhada 1</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (3, 'Leitura compartilhada 3', '', 'LC');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-LeituraCompartilhada3Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (3, 1, '1. Sugestões de leitura', 
+				'Os livros sugeridos abaixo contam histórias sobre a linguagem escrita, mostrando de forma lúdica como crianças descobrem as letras, palavras e a leitura. Eles abordam temas como alfabetização, curiosidade pelo mundo escrito e o prazer de explorar livros e histórias.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-LeituraCompartilhada3Sugestao1" author="Leonardo Martins">
+		<comment>Inserindo sugestao de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (3, 2, 'O menino que aprender a ver', 
+				'Narra a história de Joãozinho, um menino que, ao entrar na escola, começa a perceber que as palavras que antes pareciam apenas desenhos sem sentido possuem significados. A obra destaca a importância da alfabetização e como ela transforma a forma como vemos e interagimos com o mundo.'
+			)
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-LeituraCompartilhada3Sugestao2" author="Leonardo Martins">
+		<comment>Inserindo sugestao de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (3, 3, 'Achimpa', 
+				'Conta a história de uma palavra inventada que, de repente, aparece e deixa todos curiosos. Sem saber o que ela significa, as pessoas começam a usá-la de diferentes formas no dia a dia. A narrativa mostra, com humor e criatividade, como as palavras ganham sentido através do uso. As ilustrações divertidas complementam a brincadeira, deixando a leitura leve e envolvente. É uma obra que estimula a imaginação e a reflexão sobre a linguagem.'
+			)
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-LeituraCompartilhada3Sugestao3" author="Leonardo Martins">
+		<comment>Inserindo sugestão de leitura na leitura compartilhada</comment>
+		<sql>
+			insert into atividade_pai_sugestao_leitura (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_descricao)
+			values (3, 4, 'O menino que não sabia ler',
+				'Conta a história de um menino que não sabia ler e, por causa disso, tinha medo das letras, chegando a ter pesadelos. Durante a história, ele encontra um sábio, que lhe explica que precisava de tempo, paciência e persistência. Aos poucos, o menino começa a reconhecer as palavras e descobre que a leitura pode ser divertida. No final, percebe que aprender a ler transforma o medo em curiosidade e alegria.'
+			)
+		</sql>
+	</changeSet>
+	
+	
+	
+</databaseChangeLog>

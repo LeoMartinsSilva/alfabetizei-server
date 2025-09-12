@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeFilhoAtividade3" author="Leonardo Martins">
+		<comment>Inserindo atividade filho</comment>
+		<sql>
+			insert into atividade_filho (id_atividade_filho, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (3, 'Atividade 3', 'Escrever consoantes pontilhadas', 'LP');
+		</sql>
+	</changeSet>
+
+	<changeSet id="2-InserindoAtividadeFilhoAtividade2LetrasPontilhadas" author="Leonardo Martins">
+		<comment>Inserindo letras pontilhadas</comment>
+		<sql>
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
+			values (2, 1, 'B');
+		
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
+			values (2, 2, 'C');
+			
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
+			values (2, 3, 'D');
+			
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
+			values (2, 4, 'F');
+			
+			insert into atividade_filho_letras_pontilhadas (id_atividade_filho, sq_interno_atividade, ds_letras)
+			values (2, 5, 'G');	
+		</sql>
+	</changeSet>
+</databaseChangeLog>

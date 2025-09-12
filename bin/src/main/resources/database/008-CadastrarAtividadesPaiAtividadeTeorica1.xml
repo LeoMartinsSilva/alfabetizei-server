@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="1-InserindoAtividadeTeorica1" author="Leonardo Martins">
+		<comment>Inserindo atividade teórica 1</comment>
+		<sql>
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
+			values (4, 'Atividade teórica 1', 'Como Ensinar o Alfabeto?', 'AT');
+		</sql>
+	</changeSet>
+	
+	<changeSet id="2-AtividadeTeorica1Texto1" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 1, '', 
+				'O ensino das letras é uma das primeiras e mais importantes etapas no processo de alfabetização de uma criança. Para que essa experiência seja significativa, é essencial que seja lúdica, ou seja, apresentada de forma divertida por meio de brincadeiras, histórias, músicas e outras atividades prazerosas. A seguir, você encontra algumas sugestões de atividades que podem apoiar esse aprendizado.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="3-AtividadeTeorica1Texto2" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 2, '1. Apresente o alfabeto', 
+				'O primeiro passo é apresentar o alfabeto como um todo, seja em vídeos educativos, músicas ou cartazes coloridos. Quanto mais presente ele estiver no dia a dia da criança, mais natural será o processo de aprendizagem.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="4-AtividadeTeorica1Texto3" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 3, '', 
+				'Uma forma simples e eficaz é mostrar palavras que comecem com cada letra, como “A” de Amor e “B” de Bola. Após alguns dias de exposição, comece a estimular a criança com perguntas: “Com qual letra começa a palavra Amigo?”. Esse tipo de atividade reforça a associação entre letras e palavras.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="5-AtividadeTeorica1Texto4" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 4, '2. Músicas', 
+				'As músicas infantis são excelentes aliadas na alfabetização, pois ajudam a criança a memorizar letras e relacioná-las a palavras. Canções como o Abecedário da Xuxa são bons exemplos dessa prática.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="6-AtividadeTeorica1Texto5" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 5, '', 
+				'Além disso, cantar músicas auxilia no desenvolvimento da coordenação da fala e, por meio das rimas, estimula a consciência fonológica, uma habilidade fundamental para a leitura e escrita.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="7-AtividadeTeorica1Texto6" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 6, '3. Coordenação Motora e Escrita', 
+				'O treino da escrita deve acontecer de forma gradual e prazerosa. Com a ajuda de um caderno, mostre como escrever cada letra e incentive a criança a reproduzi-la. Essa prática é essencial para avançar na alfabetização.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="8-AtividadeTeorica1Texto7" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 7, '', 
+				'Para tornar o exercício ainda mais divertido, explore materiais variados: escrever letras na areia com o dedo, moldá-las com massinha de modelar ou até mesmo desenhá-las em cartazes grandes para colorir. Essas variações trabalham não só a escrita, mas também a coordenação motora fina.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="9-AtividadeTeorica1Texto8" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 8, '4. Leitura Compartilhada', 
+				'A leitura compartilhada é um recurso poderoso para aproximar a criança dos livros e despertar nela o gosto pela leitura. Ao participar desse momento, ela percebe que ler pode ser uma atividade prazerosa e interativa.')
+		</sql>
+	</changeSet>
+	
+	<changeSet id="10-AtividadeTeorica1Texto9" author="Leonardo Martins">
+		<comment>Inserindo texto na atividadeTeorica</comment>
+		<sql>
+			insert into atividade_pai_texto (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_texto)
+			values (4, 9, '', 
+				'Nas próximas atividades do aplicativo serão sugeridos livros infantis para serem lidos em conjunto, fortalecendo tanto o vínculo afetivo quanto as habilidades de linguagem.')
+		</sql>
+	</changeSet>
+</databaseChangeLog>

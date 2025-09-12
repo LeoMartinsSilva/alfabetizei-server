@@ -7,8 +7,8 @@
 	<changeSet id="1-InserindoAtividadeTeorica2" author="Leonardo Martins">
 		<comment>Inserindo atividade teórica 2</comment>
 		<sql>
-			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo) 
-			values (5, 'Atividade teórica 2', 'Vogais', 'AT');
+			insert into atividade_pai (id_atividade_pai, ds_titulo, ds_subtitulo, fl_tipo, vl_tempo_estimado_minutos) 
+			values (5, 'Atividade teórica 2', 'Vogais', 'AT', 45);
 		</sql>
 	</changeSet>
 	
@@ -87,8 +87,8 @@
 	<changeSet id="10-AtividadeTeorica2SugestaoVideo1" author="Leonardo Martins">
 		<comment>Inserindo sugestão de video na atividadeTeorica</comment>
 		<sql>
-			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_link_youtube)
-			values (5, 9, 'AEIOU', 'Animaguel', 'https://www.youtube.com/watch?v=WyA6GscP4DA')
+			insert into atividade_pai_sugestao_video (id_atividade_pai, sq_interno_atividade, ds_titulo, ds_autor, ds_id_youtube)
+			values (5, 9, 'AEIOU', 'Animaguel', 'WyA6GscP4DA')
 		</sql>
 	</changeSet>
 	
