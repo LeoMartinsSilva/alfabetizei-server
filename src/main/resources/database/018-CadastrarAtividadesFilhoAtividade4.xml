@@ -103,10 +103,10 @@
 			values (10, 4, 5);
 			
 			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (10, 1, 'B', false);
+			values (10, 1, 'B', true);
 			
 			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
-			values (10, 2, 'P', true);
+			values (10, 2, 'P', false);
 			
 			insert into atividade_filho_escolha_opcao (id_atividade_filho_escolha, sq_opcao, ds_opcao, fl_opcao_correta)
 			values (10, 3, 'T', false);
