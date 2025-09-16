@@ -1,4 +1,4 @@
-package br.app.alfabetizei_server;
+package br.app.alfabetizei;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
