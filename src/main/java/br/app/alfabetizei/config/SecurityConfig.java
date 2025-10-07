@@ -24,6 +24,12 @@ public class SecurityConfig {
                         .requestMatchers("/atividadePai/imagem/**").permitAll()
                         .requestMatchers("/atividadeFilho/imagem/**").permitAll()
                         .requestMatchers("/atividadeFilho/audio/**").permitAll()
+                        .requestMatchers(
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/api-docs/**",
+                                "/v3/api-docs/**"
+                        ).permitAll()
                         .anyRequest().authenticated() 
                 )
                 .formLogin(form -> form.disable())
